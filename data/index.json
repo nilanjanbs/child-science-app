@@ -1,0 +1,289 @@
+{
+  "generated": "2026-05-06T03:48:25.153Z",
+  "totalQuestions": 1573,
+  "byGrade": {
+    "2": 765,
+    "3": 808
+  },
+  "files": [
+    {
+      "id": "A",
+      "grade": "2",
+      "emoji": "🧱",
+      "title": "Properties of Materials",
+      "description": "Objects are made of different materials. Materials have properties like hard, soft, rough, smooth, shiny, and dull.",
+      "questionCount": 50,
+      "path": "grade2/matter/A-materials.json"
+    },
+    {
+      "id": "B",
+      "grade": "2",
+      "emoji": "💧",
+      "title": "States of Matter",
+      "description": "Matter can be a solid, a liquid, or a gas. Solids keep their shape. Liquids flow and take the shape of their container. Gases spread out to fill their space.",
+      "questionCount": 51,
+      "path": "grade2/matter/B-states-of-matter.json"
+    },
+    {
+      "id": "C",
+      "grade": "2",
+      "emoji": "🧊",
+      "title": "Changes of State",
+      "description": "Heating and cooling can change matter from one state to another. Melting, freezing, evaporating, and condensing are all changes of state.",
+      "questionCount": 51,
+      "path": "grade2/matter/C-changes-of-state.json"
+    },
+    {
+      "id": "D",
+      "grade": "2",
+      "emoji": "💡",
+      "title": "Light and Sound",
+      "description": "Light travels in straight lines and can be blocked to make shadows. Sounds are vibrations that travel through air. We use light and sound to communicate.",
+      "questionCount": 51,
+      "path": "grade2/light-sound/D-light-and-sound.json"
+    },
+    {
+      "id": "E",
+      "grade": "2",
+      "emoji": "⚗️",
+      "title": "Physical and Chemical Change",
+      "description": "A physical change changes the size or shape of matter but not what it is made of. A chemical change creates a NEW substance with different properties.",
+      "questionCount": 51,
+      "path": "grade2/matter/E-physical-chemical.json"
+    },
+    {
+      "id": "F",
+      "grade": "2",
+      "emoji": "🥣",
+      "title": "Mixtures",
+      "description": "A mixture is made by combining two or more materials. The materials in a mixture do not chemically change — they can often be separated again.",
+      "questionCount": 51,
+      "path": "grade2/matter/F-mixtures.json"
+    },
+    {
+      "id": "G",
+      "grade": "2",
+      "emoji": "⚡",
+      "title": "Force and Motion",
+      "description": "A force is a push or a pull. Forces can make objects start moving, stop, or change direction. Mass and force both affect how objects move.",
+      "questionCount": 51,
+      "path": "grade2/forces/G-force-and-motion.json"
+    },
+    {
+      "id": "H",
+      "grade": "2",
+      "emoji": "🧲",
+      "title": "Magnets",
+      "description": "Magnets attract iron and steel objects. Every magnet has two poles: North (N) and South (S). Opposite poles attract; same poles repel.",
+      "questionCount": 51,
+      "path": "grade2/forces/H-magnets.json"
+    },
+    {
+      "id": "I",
+      "grade": "2",
+      "emoji": "🔍",
+      "title": "Classification of Living Things",
+      "description": "Scientists sort living things into groups. All living things grow, need food, and reproduce. Animals are sorted by features like backbones, fur, feathers, or scales.",
+      "questionCount": 51,
+      "path": "grade2/life-science/I-classification.json"
+    },
+    {
+      "id": "J",
+      "grade": "2",
+      "emoji": "🐾",
+      "title": "Animals",
+      "description": "Animals grow and change through life cycles. Animals have body parts that help them survive. Some animals live in groups for protection and finding food.",
+      "questionCount": 51,
+      "path": "grade2/life-science/J-animals.json"
+    },
+    {
+      "id": "K",
+      "grade": "2",
+      "emoji": "🌱",
+      "title": "Plants",
+      "description": "Plants have parts like roots, stems, leaves, and flowers. They make new plants through seeds. Flowering plants have life cycles from seed to flower.",
+      "questionCount": 51,
+      "path": "grade2/life-science/K-plants.json"
+    },
+    {
+      "id": "L",
+      "grade": "2",
+      "emoji": "🦋",
+      "title": "Traits and Adaptations",
+      "description": "Traits are features of a living thing passed from parents to offspring. Adaptations are special traits that help an organism survive in its environment.",
+      "questionCount": 51,
+      "path": "grade2/life-science/L-traits.json"
+    },
+    {
+      "id": "M",
+      "grade": "2",
+      "emoji": "🌍",
+      "title": "Earth's Features",
+      "description": "Earth has land features like mountains, valleys, and plains. Water covers most of Earth as oceans, lakes, and rivers. Earth has many natural resources.",
+      "questionCount": 51,
+      "path": "grade2/earth-science/M-earth-features.json"
+    },
+    {
+      "id": "N",
+      "grade": "2",
+      "emoji": "🌋",
+      "title": "Earth Events",
+      "description": "Earthquakes, volcanoes, and erosion can change Earth's surface. Some changes happen quickly, others happen very slowly over time.",
+      "questionCount": 51,
+      "path": "grade2/earth-science/N-earth-events.json"
+    },
+    {
+      "id": "O",
+      "grade": "2",
+      "emoji": "📏",
+      "title": "Units and Measurement",
+      "description": "We measure time in seconds, minutes, hours, and days. We measure distance in centimetres, metres, and kilometres. Mass is measured in grams and kilograms.",
+      "questionCount": 52,
+      "path": "grade2/measurement/O-measurement.json"
+    },
+    {
+      "id": "A",
+      "grade": "3",
+      "emoji": "🔬",
+      "title": "Materials in Objects",
+      "description": "Objects are made of one or more materials. The materials chosen for an object depend on the properties needed — strength, flexibility, or waterproofing.",
+      "questionCount": 52,
+      "path": "grade3/matter/A-materials.json"
+    },
+    {
+      "id": "B",
+      "grade": "3",
+      "emoji": "⚗️",
+      "title": "States of Matter",
+      "description": "All matter is made of tiny particles. Solids have particles packed tightly in a fixed shape. Liquids flow and take the shape of their container. Gases spread to fill any space.",
+      "questionCount": 52,
+      "path": "grade3/matter/B-states-matter.json"
+    },
+    {
+      "id": "C",
+      "grade": "3",
+      "emoji": "🌡️",
+      "title": "Phase Change",
+      "description": "Phase changes occur when matter changes state. Heating adds energy causing melting and evaporation. Cooling removes energy causing condensation and freezing.",
+      "questionCount": 51,
+      "path": "grade3/matter/C-phase-change.json"
+    },
+    {
+      "id": "D",
+      "grade": "3",
+      "emoji": "🌡️",
+      "title": "Heat and Thermal Energy",
+      "description": "Thermal energy is the total energy of moving particles in matter. Heat flows from warmer objects to cooler ones. Temperature measures how hot or cold something is.",
+      "questionCount": 51,
+      "path": "grade3/matter/D-heat-thermal.json"
+    },
+    {
+      "id": "E",
+      "grade": "3",
+      "emoji": "🧫",
+      "title": "Physical and Chemical Change",
+      "description": "Physical changes alter shape or state but not composition. Chemical changes create new substances with different properties. Evidence includes colour change, gas production, heat, or light.",
+      "questionCount": 50,
+      "path": "grade3/matter/E-physical-chemical.json"
+    },
+    {
+      "id": "F",
+      "grade": "3",
+      "emoji": "🚀",
+      "title": "Force and Motion",
+      "description": "Forces can be balanced or unbalanced. Unbalanced forces cause objects to speed up, slow down, or change direction. Mass and force both affect motion.",
+      "questionCount": 51,
+      "path": "grade3/forces/F-force-motion.json"
+    },
+    {
+      "id": "G",
+      "grade": "3",
+      "emoji": "🧲",
+      "title": "Magnets",
+      "description": "Magnets attract ferromagnetic materials. Magnetic force can attract or repel. Stronger magnets have greater magnetic force. Magnets can solve engineering problems.",
+      "questionCount": 50,
+      "path": "grade3/forces/G-magnets.json"
+    },
+    {
+      "id": "H",
+      "grade": "3",
+      "emoji": "🐾",
+      "title": "Animals",
+      "description": "Animals have life cycles, behaviours, and adaptations. Pollinators and seed dispersers help plants reproduce. Group behaviour provides survival benefits.",
+      "questionCount": 50,
+      "path": "grade3/life-science/H-animals.json"
+    },
+    {
+      "id": "I",
+      "grade": "3",
+      "emoji": "🌱",
+      "title": "Plants",
+      "description": "Plants make their own food through photosynthesis. They have specialised parts — roots, stems, leaves, and flowers. Flowering plants reproduce using seeds dispersed in many ways.",
+      "questionCount": 50,
+      "path": "grade3/life-science/I-plants.json"
+    },
+    {
+      "id": "J",
+      "grade": "3",
+      "emoji": "🌿",
+      "title": "Ecosystems",
+      "description": "An ecosystem is a community of living things and their environment. Food chains and webs show how energy moves from plants to animals. Every organism has a role.",
+      "questionCount": 50,
+      "path": "grade3/life-science/J-ecosystems.json"
+    },
+    {
+      "id": "K",
+      "grade": "3",
+      "emoji": "🦕",
+      "title": "Fossils",
+      "description": "Fossils are remains or imprints of organisms from long ago, preserved in rock. Scientists study fossils to learn about ancient life and how organisms have changed over time.",
+      "questionCount": 50,
+      "path": "grade3/life-science/K-fossils.json"
+    },
+    {
+      "id": "L",
+      "grade": "3",
+      "emoji": "🌤️",
+      "title": "Weather and Climate",
+      "description": "Weather is the day-to-day condition of the atmosphere. Temperature is measured with thermometers. Climate is the typical weather pattern of a region over a long time.",
+      "questionCount": 51,
+      "path": "grade3/weather/L-weather-climate.json"
+    },
+    {
+      "id": "M",
+      "grade": "3",
+      "emoji": "💧",
+      "title": "Earth's Features & Water Cycle",
+      "description": "The water cycle moves water between Earth's surface and atmosphere through evaporation, condensation, and precipitation. Earth has diverse land and water features.",
+      "questionCount": 49,
+      "path": "grade3/earth-science/M-earth-features.json"
+    },
+    {
+      "id": "N",
+      "grade": "3",
+      "emoji": "🌋",
+      "title": "Earth Events",
+      "description": "Earth's surface is changed by earthquakes, volcanoes, erosion, and other events. Some changes are rapid, others occur over millions of years. Scientists classify changes as fast or slow.",
+      "questionCount": 49,
+      "path": "grade3/earth-science/N-earth-events.json"
+    },
+    {
+      "id": "O",
+      "grade": "3",
+      "emoji": "🔧",
+      "title": "Engineering Practices",
+      "description": "Engineers identify problems and design solutions. They test, improve, and compare designs. Science knowledge about forces, materials, and the environment helps engineers solve real problems.",
+      "questionCount": 50,
+      "path": "grade3/engineering/O-engineering.json"
+    },
+    {
+      "id": "P",
+      "grade": "3",
+      "emoji": "📐",
+      "title": "Units and Measurement",
+      "description": "Scientists use standard units to measure time, distance, mass, and volume. Using standard units lets scientists share and compare measurements accurately.",
+      "questionCount": 52,
+      "path": "grade3/measurement/P-measurement.json"
+    }
+  ]
+}

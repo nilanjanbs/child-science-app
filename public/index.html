@@ -1,0 +1,1840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>🔬 Mahika Science — Grade 2 & 3</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Pacifico&display=swap" rel="stylesheet"/>
+<style>
+/* ── Reset ────────────────────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+button{font-family:'Nunito',sans-serif;cursor:pointer;border:none;transition:all .2s ease}
+button:active{transform:scale(.95)!important}
+input,select,textarea{font-family:'Nunito',sans-serif}
+
+/* ── Material 3 Color Tokens — Light Theme ───────────────────── */
+:root{
+  /* M3 primary: science teal */
+  --md-primary:#006874;
+  --md-on-primary:#ffffff;
+  --md-primary-container:#97F0FF;
+  --md-on-primary-container:#001F24;
+  /* M3 secondary */
+  --md-secondary:#4A6267;
+  --md-on-secondary:#ffffff;
+  --md-secondary-container:#CCE8ED;
+  --md-on-secondary-container:#051F23;
+  /* M3 tertiary: warm amber */
+  --md-tertiary:#735B0C;
+  --md-on-tertiary:#ffffff;
+  --md-tertiary-container:#FFDEA1;
+  --md-on-tertiary-container:#251A00;
+  /* M3 error */
+  --md-error:#BA1A1A;
+  --md-error-container:#FFDAD6;
+  /* M3 surface */
+  --md-background:#F5FEFF;
+  --md-surface:#F5FEFF;
+  --md-surface-variant:#DBE4E6;
+  --md-on-background:#171D1E;
+  --md-on-surface:#171D1E;
+  --md-on-surface-variant:#3F4849;
+  --md-outline:#6F797A;
+  --md-outline-variant:#BFC8CA;
+  /* Extra accent colours for science fun */
+  --sci-green:#1B873A;
+  --sci-green-c:#C2F8CB;
+  --sci-purple:#6200EE;
+  --sci-purple-c:#EDE7F6;
+  --sci-orange:#D84315;
+  --sci-orange-c:#FFE0B2;
+  --sci-pink:#AD1457;
+  --sci-pink-c:#FCE4EC;
+  /* Elevation tints (M3 tonal elevation) */
+  --el-1:rgba(0,104,116,.05);
+  --el-2:rgba(0,104,116,.08);
+  --el-3:rgba(0,104,116,.11);
+  /* radius */
+  --r-xs:8px;--r-sm:12px;--r-md:16px;--r-lg:24px;--r-xl:28px;--r-full:999px;
+  /* theme tokens (override for dark) */
+  --bg-body:var(--md-background);
+  --bg-card:var(--md-surface);
+  --bg-card2:#ECF7F8;
+  --bg-header:rgba(245,254,255,.94);
+  --bg-pill:#ffffff;
+  --bg-choice:#EAF7F8;
+  --bg-choice-hover:#D0F0F4;
+  --bg-ollie:#FFFDE7;
+  --bg-input:#ffffff;
+  --border-card:var(--md-outline-variant);
+  --border-pill:var(--md-outline-variant);
+  --border-nav:var(--md-outline-variant);
+  --text-main:var(--md-on-surface);
+  --text-sub:var(--md-on-surface-variant);
+  --text-choice:var(--md-on-surface);
+  --shadow-card:0 1px 3px rgba(0,0,0,.12),0 4px 12px rgba(0,104,116,.08);
+  --shadow-fab:0 6px 20px rgba(0,104,116,.35);
+}
+
+/* ── Material 3 Dark Theme ───────────────────────────────────── */
+html.dark{
+  --md-primary:#4FD8EB;
+  --md-on-primary:#00363D;
+  --md-primary-container:#004F58;
+  --md-on-primary-container:#97F0FF;
+  --md-secondary:#B1CBD0;
+  --md-on-secondary:#1C3438;
+  --md-secondary-container:#334B50;
+  --md-on-secondary-container:#CCE8ED;
+  --md-tertiary:#F0BD48;
+  --md-on-tertiary:#3D2F00;
+  --md-tertiary-container:#584400;
+  --md-on-tertiary-container:#FFDEA1;
+  --md-error:#FFB4AB;
+  --md-error-container:#93000A;
+  --md-background:#0E1415;
+  --md-surface:#0E1415;
+  --md-surface-variant:#3F4849;
+  --md-on-background:#E1E3E3;
+  --md-on-surface:#E1E3E3;
+  --md-on-surface-variant:#BFC8CA;
+  --md-outline:#899294;
+  --md-outline-variant:#3F4849;
+  /* dark accents */
+  --sci-green:#69DC89;
+  --sci-green-c:#1A3523;
+  --sci-purple:#CF9FFF;
+  --sci-purple-c:#1E1040;
+  --sci-orange:#FFB98A;
+  --sci-orange-c:#3E1500;
+  --sci-pink:#F48FB1;
+  --sci-pink-c:#3E0020;
+  /* dark theme tokens */
+  --bg-body:#0E1415;
+  --bg-card:#1A2122;
+  --bg-card2:#1E2728;
+  --bg-header:rgba(14,20,21,.95);
+  --bg-pill:#1A2122;
+  --bg-choice:#1A2F32;
+  --bg-choice-hover:#1E3A3E;
+  --bg-ollie:#1C1E0A;
+  --bg-input:#1A2122;
+  --border-card:#3F4849;
+  --border-pill:#3F4849;
+  --border-nav:#3F4849;
+  --text-main:#E1E3E3;
+  --text-sub:#BFC8CA;
+  --text-choice:#D0F0F4;
+  --shadow-card:0 2px 8px rgba(0,0,0,.4),0 4px 16px rgba(0,0,0,.3);
+  --shadow-fab:0 6px 20px rgba(0,0,0,.6);
+}
+
+/* ── Base ────────────────────────────────────────────────────── */
+html{font-size:16px;scroll-behavior:smooth}
+body{
+  font-family:'Nunito',sans-serif;
+  background:var(--bg-body);
+  color:var(--text-main);
+  min-height:100vh;
+  overflow-x:hidden;
+  transition:background .35s,color .35s;
+}
+
+/* ── Animations ──────────────────────────────────────────────── */
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pop{0%{transform:scale(1)}50%{transform:scale(1.4)}100%{transform:scale(1)}}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-7px)}75%{transform:translateX(7px)}}
+@keyframes correctPulse{0%,100%{box-shadow:0 0 0 0 rgba(27,135,58,.4)}50%{box-shadow:0 0 0 10px rgba(27,135,58,0)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes twinkle{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(.7)}}
+@keyframes shootStar{
+  0%{opacity:0;transform:translateX(-60px) translateY(-30px) rotate(-30deg)}
+  15%{opacity:1}
+  100%{opacity:0;transform:translateX(400px) translateY(200px) rotate(-30deg)}
+}
+@keyframes particleFly{
+  0%{transform:translate(0,0) scale(1);opacity:1}
+  100%{transform:translate(var(--tx),var(--ty)) scale(0);opacity:0}
+}
+@keyframes ollieWave{0%,100%{transform:rotate(0deg)}30%{transform:rotate(-15deg)}60%{transform:rotate(15deg)}}
+@keyframes ripple{0%{transform:scale(0);opacity:.6}100%{transform:scale(2.5);opacity:0}}
+@keyframes confettiFall{
+  0%{transform:translateY(-20px) rotate(0deg);opacity:1}
+  100%{transform:translateY(110vh) rotate(720deg);opacity:0}
+}
+@keyframes screenFlashGreen{
+  0%,100%{background:rgba(27,135,58,0)}
+  30%{background:rgba(27,135,58,.13)}
+}
+@keyframes screenFlashRed{
+  0%,100%{background:rgba(186,26,26,0)}
+  30%{background:rgba(186,26,26,.11)}
+}
+@keyframes sparkyBounce{
+  0%,100%{transform:translateY(0) scale(1)}
+  30%{transform:translateY(-14px) scale(1.15)}
+  60%{transform:translateY(-6px) scale(1.05)}
+}
+@keyframes sparkyShake{
+  0%,100%{transform:translateX(0) rotate(0)}
+  20%{transform:translateX(-8px) rotate(-10deg)}
+  40%{transform:translateX(8px) rotate(10deg)}
+  60%{transform:translateX(-5px) rotate(-5deg)}
+  80%{transform:translateX(5px) rotate(5deg)}
+}
+@keyframes starPop{
+  0%{transform:scale(1)}
+  40%{transform:scale(1.6)}
+  70%{transform:scale(.85)}
+  100%{transform:scale(1)}
+}
+@keyframes streakBurst{
+  0%{transform:translate(-50%,-50%) scale(.4);opacity:0}
+  50%{transform:translate(-50%,-50%) scale(1.1);opacity:1}
+  80%{transform:translate(-50%,-50%) scale(.95);opacity:1}
+  100%{transform:translate(-50%,-50%) scale(1);opacity:0}
+}
+
+.float{animation:float 3.5s ease-in-out infinite}
+.fadeUp{animation:fadeUp .4s ease forwards}
+.pop{animation:pop .35s ease}
+
+/* Screen flash overlay */
+#flash-overlay{
+  position:fixed;inset:0;pointer-events:none;z-index:8888;
+  border-radius:0;opacity:0;
+}
+.flash-green{animation:screenFlashGreen .5s ease forwards}
+.flash-red{animation:screenFlashRed .5s ease forwards}
+
+/* Confetti pieces */
+.confetti-piece{
+  position:fixed;top:-20px;width:10px;height:10px;
+  border-radius:2px;pointer-events:none;z-index:9990;
+  animation:confettiFall linear forwards;
+}
+
+/* Sound chip */
+#sound-chip{border-color:var(--md-secondary);font-size:17px;padding:5px 10px}
+#sound-chip.muted{opacity:.5}
+
+/* ── Background decoration ───────────────────────────────────── */
+#bg-wrap{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none;
+  background:linear-gradient(150deg,#E0F7FA 0%,#F5FEFF 40%,#E8F5E9 70%,#FFF8E1 100%);
+  transition:background .4s}
+html.dark #bg-wrap{
+  background:linear-gradient(150deg,#040D0E 0%,#0E1415 40%,#0A1510 60%,#0E0E0A 100%);
+}
+.bg-blob{position:absolute;border-radius:50%;filter:blur(60px);opacity:.35}
+#blob1{width:420px;height:420px;background:radial-gradient(circle,#80DEEA,transparent);top:-80px;left:-80px}
+#blob2{width:360px;height:360px;background:radial-gradient(circle,#A5D6A7,transparent);bottom:100px;right:-60px}
+#blob3{width:260px;height:260px;background:radial-gradient(circle,#FFE082,transparent);top:40%;left:60%}
+html.dark .bg-blob{opacity:.2}
+html.dark #blob1{background:radial-gradient(circle,#004F58,transparent)}
+html.dark #blob2{background:radial-gradient(circle,#1B3A1F,transparent)}
+html.dark #blob3{background:radial-gradient(circle,#3D2F00,transparent)}
+
+/* floating atoms / molecules decoration */
+.deco{position:absolute;font-size:clamp(22px,3vw,36px);opacity:.12;animation:float ease-in-out infinite;pointer-events:none}
+html.dark .deco{opacity:.08}
+.night-star{position:absolute;font-size:11px;color:rgba(180,240,255,0);animation:twinkle ease-in-out infinite;pointer-events:none;transition:color .4s}
+html.dark .night-star{color:rgba(180,240,255,.6)}
+.shoot-star{position:absolute;top:18%;left:10%;width:100px;height:2px;
+  background:linear-gradient(90deg,rgba(180,240,255,0),rgba(180,240,255,.9),rgba(180,240,255,0));
+  border-radius:2px;opacity:0;display:none}
+html.dark .shoot-star{display:block;animation:shootStar 4s ease-in-out 3s infinite}
+
+/* ── Layout ──────────────────────────────────────────────────── */
+#app-wrap{position:relative;z-index:1}
+#main{max-width:960px;margin:0 auto;padding:0 14px 100px}
+
+/* ── M3 Welcome Screen ───────────────────────────────────────── */
+#welcome-screen{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  min-height:100vh;padding:24px;text-align:center;
+}
+.welcome-mascot{font-size:clamp(80px,15vw,130px);display:block;animation:float 3.2s ease-in-out infinite;
+  filter:drop-shadow(0 12px 24px rgba(0,104,116,.2));margin-bottom:4px}
+.welcome-title{
+  font-family:'Pacifico',cursive;font-size:clamp(26px,5.5vw,52px);margin:8px 0;
+  background:linear-gradient(135deg,#006874,#1B873A,#735B0C);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+html.dark .welcome-title{background:linear-gradient(135deg,#4FD8EB,#69DC89,#F0BD48);
+  -webkit-background-clip:text;background-clip:text;}
+.welcome-sub{font-size:clamp(14px,2.5vw,18px);color:var(--text-sub);font-weight:700;margin-bottom:28px;line-height:1.5}
+
+/* M3 Card */
+.m3-card{
+  background:var(--bg-card);border-radius:var(--r-xl);padding:28px 24px;
+  box-shadow:var(--shadow-card);border:1px solid var(--border-card);
+  transition:background .35s,box-shadow .35s,border-color .35s;
+}
+.name-box{max-width:440px;width:100%}
+.name-label{font-weight:800;font-size:15px;color:var(--text-main);margin-bottom:10px;text-align:left;display:flex;align-items:center;gap:6px}
+.name-input{
+  width:100%;padding:18px 22px;font-size:22px;font-weight:800;text-align:center;
+  border:2px solid var(--border-card);border-radius:var(--r-full);outline:none;margin-bottom:18px;
+  transition:border-color .2s,background .35s,color .35s;
+  color:var(--text-main);background:var(--bg-input);
+}
+.name-input:focus{border-color:var(--md-primary);box-shadow:0 0 0 3px rgba(0,104,116,.2)}
+html.dark .name-input:focus{box-shadow:0 0 0 3px rgba(79,216,235,.25)}
+.grade-row{display:flex;gap:10px;margin-bottom:20px}
+.grade-btn{
+  flex:1;padding:14px 8px;border-radius:var(--r-md);border:2px solid var(--border-card);
+  background:var(--bg-pill);font-size:15px;font-weight:800;color:var(--text-sub);
+  transition:all .2s;cursor:pointer;min-height:52px;
+}
+.grade-btn.active{
+  border-color:var(--md-primary);
+  background:var(--md-primary-container);
+  color:var(--md-on-primary-container);
+}
+/* M3 Filled Button */
+.btn-filled{
+  width:100%;padding:18px;border-radius:var(--r-full);
+  background:var(--md-primary);color:var(--md-on-primary);
+  font-size:18px;font-weight:900;border:none;cursor:pointer;min-height:56px;
+  box-shadow:0 3px 0 rgba(0,104,116,.4);
+  transition:all .2s;display:flex;align-items:center;justify-content:center;gap:8px;
+  letter-spacing:.3px;
+}
+.btn-filled:hover{background:#00838F;box-shadow:0 5px 0 rgba(0,104,116,.4);transform:translateY(-2px)}
+html.dark .btn-filled{background:var(--md-primary);color:var(--md-on-primary);box-shadow:0 3px 0 rgba(0,0,0,.4)}
+html.dark .btn-filled:hover{background:#38C5D8}
+
+/* ── M3 App Header ───────────────────────────────────────────── */
+#app-header{
+  display:none;padding:10px 14px 0;position:sticky;top:0;z-index:50;
+  background:var(--bg-header);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border-card);transition:background .35s,border-color .35s;
+}
+.header-inner{max-width:960px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;padding-bottom:10px}
+.logo{font-family:'Pacifico',cursive;font-size:clamp(17px,3vw,24px);
+  background:linear-gradient(135deg,#006874,#1B873A,#735B0C);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  white-space:nowrap;
+}
+html.dark .logo{background:linear-gradient(135deg,#4FD8EB,#69DC89,#F0BD48);-webkit-background-clip:text;background-clip:text;}
+.header-right{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+
+/* M3 Assist chip style */
+.chip{
+  display:flex;align-items:center;gap:5px;
+  background:var(--bg-pill);border-radius:var(--r-full);
+  padding:6px 12px;font-size:13px;font-weight:800;
+  border:1.5px solid var(--border-pill);cursor:pointer;
+  transition:all .2s;min-height:36px;color:var(--text-main);white-space:nowrap;
+}
+.chip:hover{box-shadow:0 2px 8px rgba(0,104,116,.2)}
+#player-chip{border-color:var(--md-primary)}
+#player-chip:hover{background:var(--md-primary-container);color:var(--md-on-primary-container)}
+#star-chip{border-color:var(--md-tertiary);cursor:default}
+#star-count{font-family:'Pacifico',cursive;font-size:16px;color:var(--md-tertiary);transition:transform .2s}
+#streak-chip{border-color:#FF6D00;cursor:default}
+#grade-chip{border-color:var(--md-primary);color:var(--md-primary)}
+#grade-chip:hover{background:var(--md-primary-container);color:var(--md-on-primary-container)}
+.font-chip{border-color:var(--border-pill);gap:0;padding:4px}
+.font-chip button{background:none;border:none;padding:5px 8px;font-size:13px;font-weight:900;color:var(--text-sub);cursor:pointer;border-radius:var(--r-full)}
+.font-chip button:hover{background:var(--md-surface-variant);color:var(--text-main)}
+/* Theme toggle chip */
+#theme-chip{border-color:var(--md-secondary);font-size:17px;padding:5px 10px}
+html.dark #theme-chip{border-color:var(--md-primary);background:rgba(79,216,235,.12);box-shadow:0 0 10px rgba(79,216,235,.3)}
+
+/* ── M3 Navigation Bar ───────────────────────────────────────── */
+#nav-wrap{display:none;max-width:960px;margin:10px auto 0;padding:0 10px;overflow-x:auto}
+#nav-wrap::-webkit-scrollbar{height:3px}
+#nav-wrap::-webkit-scrollbar-thumb{background:var(--md-primary);border-radius:3px}
+#nav{display:flex;gap:6px;justify-content:flex-start;flex-wrap:nowrap;min-width:max-content}
+
+/* M3 Navigation Pill Tabs */
+.nav-tab{
+  display:flex;align-items:center;gap:6px;padding:10px 18px;border-radius:var(--r-full);
+  font-size:13.5px;font-weight:800;background:var(--bg-pill);color:var(--text-sub);
+  border:1.5px solid var(--border-nav);transition:all .2s;white-space:nowrap;flex-shrink:0;cursor:pointer;min-height:42px;
+}
+.nav-tab:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,104,116,.15)}
+.nav-tab.active{color:var(--md-on-primary);border-color:transparent;box-shadow:0 2px 8px rgba(0,104,116,.3)}
+.tab-badge{font-size:10px;background:rgba(255,255,255,.3);border-radius:var(--r-full);padding:1px 7px;font-weight:900}
+
+/* ── Module ──────────────────────────────────────────────────── */
+.module{display:none;animation:fadeUp .38s ease}
+.module.active{display:block}
+
+/* ── M3 Card ─────────────────────────────────────────────────── */
+.card{
+  background:var(--bg-card);border-radius:var(--r-xl);
+  box-shadow:var(--shadow-card);padding:22px;margin-bottom:18px;
+  border:1px solid var(--border-card);position:relative;overflow:hidden;
+  transition:background .35s,box-shadow .35s,border-color .35s;
+}
+.card:hover{box-shadow:0 4px 16px rgba(0,104,116,.15),0 1px 3px rgba(0,0,0,.12)}
+html.dark .card:hover{box-shadow:0 4px 16px rgba(0,0,0,.4)}
+.card-accent{height:5px;border-radius:var(--r-xl) var(--r-xl) 0 0;position:absolute;top:0;left:0;right:0}
+.mod-head{display:flex;align-items:center;gap:14px;margin-bottom:20px;padding-top:6px}
+.mod-icon{width:52px;height:52px;border-radius:var(--r-md);display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0}
+.mod-title{font-size:17px;font-weight:900;color:var(--text-main)}
+.mod-sub{font-size:13px;color:var(--text-sub);margin-top:3px;line-height:1.45}
+.mod-progress{height:4px;background:var(--md-surface-variant);border-radius:var(--r-full);margin-bottom:16px;overflow:hidden}
+.mod-progress-fill{height:100%;border-radius:var(--r-full);background:var(--md-primary);transition:width .5s ease}
+
+/* ── M3 Question Block ───────────────────────────────────────── */
+.q-block{background:var(--bg-card2);border-radius:var(--r-lg);padding:18px;margin-bottom:14px;border:1px solid var(--border-card);transition:background .35s}
+.q-num{font-size:11px;font-weight:900;color:var(--md-primary);letter-spacing:.8px;margin-bottom:7px;text-transform:uppercase}
+.q-svg{margin:8px 0 14px;text-align:center;border-radius:var(--r-md);overflow:hidden;background:var(--md-surface-variant);padding:10px}
+.q-svg svg{max-width:100%;height:auto;display:block;margin:0 auto}
+.q-text{font-size:15.5px;font-weight:800;color:var(--text-main);line-height:1.5;margin-bottom:14px}
+.choices{display:flex;flex-direction:column;gap:9px}
+.choice-btn{
+  display:flex;align-items:center;gap:12px;padding:13px 16px;border-radius:var(--r-md);
+  background:var(--bg-choice);border:1.5px solid var(--border-card);
+  font-size:14.5px;font-weight:700;color:var(--text-choice);text-align:left;
+  cursor:pointer;transition:all .18s;width:100%;
+}
+.choice-btn:hover:not([disabled]){background:var(--bg-choice-hover);border-color:var(--md-primary);transform:translateX(3px)}
+.choice-letter{
+  width:30px;height:30px;border-radius:var(--r-sm);flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  font-size:12px;font-weight:900;background:var(--md-surface-variant);color:var(--text-sub);
+  transition:all .18s;
+}
+.choice-btn.correct{background:var(--sci-green-c)!important;border-color:var(--sci-green)!important;animation:correctPulse .5s ease}
+.choice-btn.correct .choice-letter{background:var(--sci-green);color:#fff}
+.choice-btn.wrong{background:var(--md-error-container)!important;border-color:var(--md-error)!important;animation:shake .3s ease}
+.choice-btn.wrong .choice-letter{background:var(--md-error);color:#fff}
+.choice-btn[disabled]{cursor:default;transform:none!important}
+
+/* ── Explanation Box ─────────────────────────────────────────── */
+.exp-box{
+  margin-top:10px;padding:12px 14px;border-radius:var(--r-md);
+  background:var(--md-primary-container);color:var(--md-on-primary-container);
+  font-size:13.5px;font-weight:700;line-height:1.5;display:none;
+  border-left:4px solid var(--md-primary);
+}
+html.dark .exp-box{background:rgba(79,216,235,.12);color:var(--md-primary);border-left-color:var(--md-primary)}
+
+/* ── Pagination ──────────────────────────────────────────────── */
+.q-pag{display:flex;align-items:center;justify-content:center;gap:10px;margin:18px 0 6px;flex-wrap:wrap}
+.q-pag-btn{
+  padding:9px 20px;border-radius:var(--r-full);background:var(--bg-pill);
+  border:1.5px solid var(--border-card);font-size:14px;font-weight:800;
+  color:var(--text-sub);transition:all .2s;cursor:pointer;
+}
+.q-pag-btn:hover:not(:disabled){background:var(--md-primary-container);border-color:var(--md-primary);color:var(--md-on-primary-container)}
+.q-pag-btn:disabled{opacity:.35;cursor:default}
+.q-pag-info{font-size:13px;font-weight:800;color:var(--text-sub);min-width:80px;text-align:center}
+.q-pag-track{display:flex;gap:4px;justify-content:center;flex-wrap:wrap;margin:6px 0}
+.q-dot{width:8px;height:8px;border-radius:50%;background:var(--md-outline-variant);transition:all .2s;cursor:pointer}
+.q-dot.done{background:var(--sci-green)}
+.q-dot.current{background:var(--md-primary);transform:scale(1.4)}
+.q-dot.wrong-dot{background:var(--md-error)}
+
+/* ── Score Banner ────────────────────────────────────────────── */
+.score-banner{
+  text-align:center;padding:28px 20px;border-radius:var(--r-xl);
+  background:var(--md-primary-container);border:2px solid var(--md-primary);
+  animation:fadeUp .4s ease;margin-top:10px;
+}
+html.dark .score-banner{background:rgba(79,216,235,.1);border-color:var(--md-primary)}
+.score-emoji{font-size:clamp(52px,10vw,80px);display:block;margin-bottom:8px;animation:pop .5s ease}
+.score-title{font-family:'Pacifico',cursive;font-size:clamp(22px,4vw,36px);color:var(--md-on-primary-container);margin-bottom:6px}
+html.dark .score-title{color:var(--md-primary)}
+.score-msg{font-size:15px;font-weight:700;color:var(--md-on-primary-container);margin-bottom:18px}
+html.dark .score-msg{color:var(--text-sub)}
+.btn-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.btn-outline{
+  padding:11px 22px;border-radius:var(--r-full);background:transparent;
+  border:2px solid var(--md-primary);color:var(--md-primary);
+  font-size:14px;font-weight:900;cursor:pointer;transition:all .2s;
+}
+.btn-outline:hover{background:var(--md-primary-container)}
+.btn-primary{
+  padding:11px 22px;border-radius:var(--r-full);background:var(--md-primary);
+  border:2px solid var(--md-primary);color:var(--md-on-primary);
+  font-size:14px;font-weight:900;cursor:pointer;transition:all .2s;
+}
+.btn-primary:hover{background:#00838F}
+
+/* ── Ollie (Sparky mascot bubble) ────────────────────────────── */
+.ollie{
+  display:flex;align-items:flex-start;gap:12px;padding:14px 16px;
+  border-radius:var(--r-lg);background:var(--bg-ollie);
+  border:1.5px solid var(--md-tertiary-container);margin-bottom:14px;
+  transition:background .35s;
+}
+html.dark .ollie{background:rgba(240,189,72,.06);border-color:rgba(240,189,72,.2)}
+.ollie-avatar{font-size:28px;flex-shrink:0;animation:ollieWave 2s ease-in-out infinite}
+.ollie-text{font-size:14px;font-weight:700;color:var(--text-main);line-height:1.55}
+.ollie-name{font-size:11px;font-weight:900;color:var(--md-tertiary);letter-spacing:.7px;text-transform:uppercase;margin-bottom:3px}
+.ollie-actions{display:flex;gap:8px;margin-top:8px;flex-wrap:wrap}
+
+/* ── Buttons ─────────────────────────────────────────────────── */
+.btn{padding:9px 18px;border-radius:var(--r-full);font-size:13px;font-weight:900;cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:5px}
+.btn-ai{background:linear-gradient(135deg,var(--md-primary),var(--sci-green));color:#fff;border:none}
+.btn-ai:hover{opacity:.9;transform:translateY(-1px)}
+.btn-voice{background:var(--md-secondary-container);color:var(--md-on-secondary-container);border:1.5px solid var(--md-secondary-container)}
+.btn-voice:hover{background:var(--md-secondary);color:var(--md-on-secondary)}
+.btn-sm{font-size:12px;padding:7px 14px}
+.ai-cooldown{font-size:11px;color:var(--text-sub);font-weight:700}
+
+/* ── AI badge/loading ────────────────────────────────────────── */
+.ai-badge{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:800;padding:4px 10px;border-radius:var(--r-full);background:linear-gradient(135deg,var(--md-primary-container),var(--sci-green-c));color:var(--md-primary);border:1.5px solid var(--md-primary);margin-bottom:10px}
+.spinner{width:18px;height:18px;border:2.5px solid var(--border-card);border-top-color:var(--md-primary);border-radius:50%;animation:spin .7s linear infinite;display:inline-block}
+
+/* ── Topic card (module list) ────────────────────────────────── */
+.topic-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin-bottom:8px}
+.topic-card{
+  background:var(--bg-card);border:1.5px solid var(--border-card);border-radius:var(--r-lg);
+  padding:16px;cursor:pointer;transition:all .22s;display:flex;align-items:center;gap:12px;
+}
+.topic-card:hover{transform:translateY(-3px);box-shadow:0 6px 20px rgba(0,104,116,.18);border-color:var(--md-primary)}
+html.dark .topic-card:hover{box-shadow:0 6px 20px rgba(0,0,0,.4)}
+.topic-icon{font-size:28px;flex-shrink:0}
+.topic-info{flex:1;min-width:0}
+.topic-title{font-size:14px;font-weight:900;color:var(--text-main);margin-bottom:2px;line-height:1.3}
+.topic-count{font-size:12px;color:var(--text-sub);font-weight:700}
+.topic-prog{height:3px;background:var(--md-surface-variant);border-radius:var(--r-full);margin-top:6px;overflow:hidden}
+.topic-prog-fill{height:100%;border-radius:var(--r-full);background:var(--md-primary);transition:width .4s}
+
+/* ── Fun facts strip ────────────────────────────────────────── */
+.fun-fact{background:var(--md-tertiary-container);color:var(--md-on-tertiary-container);border-radius:var(--r-lg);padding:12px 16px;font-size:13.5px;font-weight:700;margin-bottom:14px;line-height:1.5;display:flex;gap:10px;align-items:flex-start;border:1px solid rgba(115,91,12,.2)}
+html.dark .fun-fact{background:rgba(240,189,72,.1);color:var(--md-tertiary);border-color:rgba(240,189,72,.2)}
+
+/* ── Leaderboard ─────────────────────────────────────────────── */
+.lb-row{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:var(--r-md);background:var(--bg-card2);margin-bottom:8px;border:1px solid var(--border-card)}
+.lb-rank{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:900;flex-shrink:0}
+.lb-name{flex:1;font-weight:800;font-size:14px;color:var(--text-main)}
+.lb-stars{font-size:14px;font-weight:900;color:var(--md-tertiary)}
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media(max-width:540px){
+  .topic-grid{grid-template-columns:1fr 1fr}
+  .q-text{font-size:14.5px}
+  .choice-btn{font-size:13.5px;padding:11px 12px}
+  .header-right{gap:4px}
+  .chip{padding:5px 9px;font-size:12px}
+}
+@media(max-width:380px){
+  .topic-grid{grid-template-columns:1fr}
+  .chip{padding:5px 8px;font-size:11px}
+}
+</style>
+</head>
+
+<body>
+
+<!-- Background decorations -->
+<div id="bg-wrap" aria-hidden="true">
+  <div class="bg-blob" id="blob1"></div>
+  <div class="bg-blob" id="blob2"></div>
+  <div class="bg-blob" id="blob3"></div>
+  <div class="deco" style="top:8%;left:6%;animation-duration:4s;animation-delay:0s">⚛️</div>
+  <div class="deco" style="top:15%;right:8%;animation-duration:3.5s;animation-delay:.5s">🧬</div>
+  <div class="deco" style="top:55%;left:3%;animation-duration:5s;animation-delay:1s">🌱</div>
+  <div class="deco" style="bottom:15%;right:5%;animation-duration:4.2s;animation-delay:.2s">🪐</div>
+  <div class="deco" style="top:38%;right:3%;animation-duration:3.8s;animation-delay:1.5s">🔭</div>
+  <div class="deco" style="bottom:30%;left:6%;animation-duration:4.5s;animation-delay:.8s">💧</div>
+  <!-- Night stars -->
+  <div class="night-star" style="top:12%;left:22%;animation-duration:2.3s">✦</div>
+  <div class="night-star" style="top:7%;left:55%;animation-duration:3.1s">✦</div>
+  <div class="night-star" style="top:20%;right:18%;animation-duration:2.7s">✧</div>
+  <div class="night-star" style="top:40%;right:25%;animation-duration:2.1s">✦</div>
+  <div class="night-star" style="top:60%;left:15%;animation-duration:3.4s">✧</div>
+  <div class="night-star" style="top:75%;right:10%;animation-duration:2.8s">✦</div>
+  <div class="night-star" style="top:30%;left:40%;animation-duration:3.6s">✦</div>
+  <div class="night-star" style="top:85%;left:50%;animation-duration:2.5s">✧</div>
+  <div class="shoot-star"></div>
+</div>
+
+<div id="flash-overlay" aria-hidden="true"></div>
+<div id="app-wrap">
+
+  <!-- ═══════════════════════════════════════════
+       WELCOME SCREEN
+  ═══════════════════════════════════════════ -->
+  <div id="welcome-screen">
+    <span class="welcome-mascot">🤖</span>
+    <h1 class="welcome-title">Mahika Science</h1>
+    <p class="welcome-sub">Discover the world with Sparky! 🔬🌍⚡<br>Ontario Curriculum · Grade 2 &amp; 3</p>
+
+    <div class="m3-card name-box">
+      <p class="name-label">🧑‍🔬 What's your name?</p>
+      <input id="name-input" class="name-input" type="text" placeholder="Type your name..." maxlength="30"
+        onkeydown="if(event.key==='Enter')startApp()"/>
+
+      <p class="name-label" style="margin-top:4px">📚 Choose your grade:</p>
+      <div class="grade-row">
+        <button class="grade-btn active" id="g2-btn" onclick="selectGrade('grade2')">Grade 2<br>🌟</button>
+        <button class="grade-btn" id="g3-btn" onclick="selectGrade('grade3')">Grade 3<br>🚀</button>
+      </div>
+
+      <button class="btn-filled" onclick="startApp()">
+        🚀 Start Learning!
+      </button>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       APP HEADER
+  ═══════════════════════════════════════════ -->
+  <header id="app-header">
+    <div class="header-inner">
+      <div class="logo">🔬 Mahika Science</div>
+      <div class="header-right">
+        <div class="chip" id="player-chip" onclick="resetApp()">
+          <span id="player-name-display">Scientist</span>
+        </div>
+        <div class="chip" id="star-chip">
+          ⭐ <span id="star-count">0</span>
+        </div>
+        <div class="chip" id="streak-chip">
+          🔥 <span id="streak-count">0</span>
+        </div>
+        <div class="chip" id="grade-chip" onclick="switchGrade()"></div>
+        <div class="chip font-chip">
+          <button onclick="changeFontSize(-1)" title="Smaller text">A-</button>
+          <button onclick="changeFontSize(1)" title="Larger text">A+</button>
+        </div>
+        <button class="chip" id="sound-chip" onclick="toggleSound()" title="Toggle sounds">🔊</button>
+        <button class="chip" id="theme-chip" onclick="toggleTheme()" title="Toggle dark/light theme">🌙</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════
+       NAV TABS
+  ═══════════════════════════════════════════ -->
+  <div id="nav-wrap">
+    <nav id="nav"></nav>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       MAIN CONTENT
+  ═══════════════════════════════════════════ -->
+  <main id="main">
+    <div id="modules-wrap"></div>
+  </main>
+
+</div><!-- /app-wrap -->
+
+<script>
+// ═══════════════════════════════════════════════════════════════
+//  STATE
+// ═══════════════════════════════════════════════════════════════
+const STATE = {
+  name: '', grade: 'grade2', stars: 0, streak: 0, badges: [],
+  history: {}, fontSize: 16
+};
+
+// Curriculum meta — sections per grade
+const CURRICULUM = {
+  grade2: [
+    { id:'matter',       label:'🧪 Matter',         color:'#006874', gradient:'linear-gradient(135deg,#006874,#00838F)',
+      topics:[
+        {id:'A',emoji:'🧱',title:'Materials'},
+        {id:'B',emoji:'💧',title:'States of Matter'},
+        {id:'C',emoji:'🧊',title:'Changes of State'},
+        {id:'E',emoji:'⚗️',title:'Physical & Chemical Change'},
+        {id:'F',emoji:'🥣',title:'Mixtures'},
+      ]},
+    { id:'light-sound',  label:'💡 Light & Sound',  color:'#735B0C', gradient:'linear-gradient(135deg,#735B0C,#9C7A10)',
+      topics:[{id:'D',emoji:'💡',title:'Light and Sound'}]},
+    { id:'forces',       label:'⚡ Forces',          color:'#1B873A', gradient:'linear-gradient(135deg,#1B873A,#2E9E4F)',
+      topics:[
+        {id:'G',emoji:'🚀',title:'Force & Motion'},
+        {id:'H',emoji:'🧲',title:'Magnets'},
+      ]},
+    { id:'life-science', label:'🐾 Life Science',   color:'#AD1457', gradient:'linear-gradient(135deg,#AD1457,#C2185B)',
+      topics:[
+        {id:'I',emoji:'🔍',title:'Classification'},
+        {id:'J',emoji:'🐾',title:'Animals'},
+        {id:'K',emoji:'🌱',title:'Plants'},
+        {id:'L',emoji:'🦋',title:'Traits & Adaptations'},
+      ]},
+    { id:'earth-science',label:'🌍 Earth Science',  color:'#6200EE', gradient:'linear-gradient(135deg,#6200EE,#7B1FA2)',
+      topics:[
+        {id:'M',emoji:'🌍',title:"Earth's Features"},
+        {id:'N',emoji:'🌋',title:'Earth Events'},
+      ]},
+    { id:'measurement',  label:'📏 Measurement',    color:'#D84315', gradient:'linear-gradient(135deg,#D84315,#E64A19)',
+      topics:[{id:'O',emoji:'📏',title:'Units & Measurement'}]},
+  ],
+  grade3: [
+    { id:'matter',       label:'🧪 Matter',         color:'#006874', gradient:'linear-gradient(135deg,#006874,#00838F)',
+      topics:[
+        {id:'A',emoji:'🔬',title:'Materials'},
+        {id:'B',emoji:'⚗️',title:'States of Matter'},
+        {id:'C',emoji:'🌡️',title:'Phase Change'},
+        {id:'D',emoji:'🌡️',title:'Heat & Thermal Energy'},
+        {id:'E',emoji:'⚗️',title:'Physical & Chemical Change'},
+      ]},
+    { id:'forces',       label:'⚡ Forces',          color:'#1B873A', gradient:'linear-gradient(135deg,#1B873A,#2E9E4F)',
+      topics:[
+        {id:'F',emoji:'🚀',title:'Force & Motion'},
+        {id:'G',emoji:'🧲',title:'Magnets'},
+      ]},
+    { id:'life-science', label:'🌿 Life Science',   color:'#AD1457', gradient:'linear-gradient(135deg,#AD1457,#C2185B)',
+      topics:[
+        {id:'H',emoji:'🐾',title:'Animals'},
+        {id:'I',emoji:'🌱',title:'Plants'},
+        {id:'J',emoji:'🌿',title:'Ecosystems'},
+        {id:'K',emoji:'🦕',title:'Fossils'},
+      ]},
+    { id:'weather',      label:'🌤️ Weather',        color:'#735B0C', gradient:'linear-gradient(135deg,#735B0C,#9C7A10)',
+      topics:[{id:'L',emoji:'🌤️',title:'Weather & Climate'}]},
+    { id:'earth-science',label:'🌍 Earth Science',  color:'#6200EE', gradient:'linear-gradient(135deg,#6200EE,#7B1FA2)',
+      topics:[
+        {id:'M',emoji:'💧',title:"Earth's Features & Water Cycle"},
+        {id:'N',emoji:'🌋',title:'Earth Events'},
+      ]},
+    { id:'engineering',  label:'🔧 Engineering',    color:'#D84315', gradient:'linear-gradient(135deg,#D84315,#E64A19)',
+      topics:[{id:'O',emoji:'🔧',title:'Engineering Practices'}]},
+    { id:'measurement',  label:'📏 Measurement',    color:'#3949AB', gradient:'linear-gradient(135deg,#3949AB,#5C6BC0)',
+      topics:[{id:'P',emoji:'📐',title:'Units & Measurement'}]},
+  ],
+};
+
+// Loaded data cache
+const DATA = {}; // key: "grade2/matter" → array of module objects
+const aiState = {}; // key: modId → {cooldownUntil}
+window.__aiMeta = {};
+
+// ── Sparky fun messages ────────────────────────────────────────
+const SPARKY_MSGS = [
+  "Let's make science FUN! 🔬",
+  "Every question makes you smarter! 🧠",
+  "Scientists never give up! 💪",
+  "Mistakes help us learn! 🌟",
+  "You're doing AMAZING! Keep going! 🚀",
+  "Curiosity is your superpower! 🦸",
+  "Science is everywhere around us! 🌍",
+  "Great thinking, scientist! 🧑‍🔬",
+];
+const CORRECT_MSGS = ["⭐ Correct! Brilliant!", "🎉 Nailed it!", "🔥 Amazing work!", "🌟 Outstanding!", "✅ Perfect!"];
+const WRONG_MSGS   = ["🤔 Not quite — check the hint!", "💡 Keep trying!", "📚 Let's learn from this!"];
+
+// ── Fun Facts ──────────────────────────────────────────────────
+const FUN_FACTS = [
+  {icon:'🔬',text:"A teaspoon of soil contains more microorganisms than there are people on Earth!"},
+  {icon:'🌍',text:"Earth is the only planet in our solar system not named after a Roman god!"},
+  {icon:'💧',text:"Water is the only substance that naturally exists as solid, liquid AND gas on Earth's surface!"},
+  {icon:'🦋',text:"A butterfly tastes with its feet — it has taste sensors on its legs!"},
+  {icon:'🧲',text:"If you cut a magnet in half, both pieces become complete magnets with their own N and S poles!"},
+  {icon:'⚡',text:"Lightning is five times hotter than the surface of the sun!"},
+  {icon:'🌱',text:"The biggest living organism on Earth is a giant underground fungus network!"},
+  {icon:'🦕',text:"Dinosaurs existed for 165 million years — humans have only been around for 300,000 years!"},
+];
+
+// ═══════════════════════════════════════════════════════════════
+//  INIT & THEME
+// ═══════════════════════════════════════════════════════════════
+(function initTheme() {
+  try {
+    const saved = localStorage.getItem('mahika_science_theme');
+    if (saved === 'dark') {
+      document.documentElement.classList.add('dark');
+    }
+  } catch(e) {}
+})();
+
+function toggleTheme() {
+  const isDark = document.documentElement.classList.toggle('dark');
+  const btn = document.getElementById('theme-chip');
+  if (btn) btn.textContent = isDark ? '☀️' : '🌙';
+  try { localStorage.setItem('mahika_science_theme', isDark ? 'dark' : 'light'); } catch(e){}
+}
+
+function changeFontSize(delta) {
+  STATE.fontSize = Math.min(20, Math.max(13, STATE.fontSize + delta));
+  document.documentElement.style.fontSize = STATE.fontSize + 'px';
+}
+
+// ═══════════════════════════════════════════════════════════════
+//  WELCOME & SETUP
+// ═══════════════════════════════════════════════════════════════
+function selectGrade(g) {
+  STATE.grade = g;
+  document.getElementById('g2-btn').classList.toggle('active', g === 'grade2');
+  document.getElementById('g3-btn').classList.toggle('active', g === 'grade3');
+}
+
+async function startApp() {
+  const nameIn = document.getElementById('name-input').value.trim();
+  if (!nameIn) { document.getElementById('name-input').focus(); return; }
+  STATE.name = nameIn;
+
+  document.getElementById('welcome-screen').style.display = 'none';
+  document.getElementById('app-header').style.display = 'block';
+  document.getElementById('nav-wrap').style.display = 'block';
+  SFX.play('start');
+
+  // Sync theme icon
+  const isDark = document.documentElement.classList.contains('dark');
+  const themeBtn = document.getElementById('theme-chip');
+  if (themeBtn) themeBtn.textContent = isDark ? '☀️' : '🌙';
+
+  // Sync sound icon
+  const soundBtn = document.getElementById('sound-chip');
+  if (soundBtn) {
+    soundBtn.textContent = SFX.muted ? '🔇' : '🔊';
+    soundBtn.classList.toggle('muted', SFX.muted);
+  }
+
+  document.getElementById('player-name-display').textContent = STATE.name;
+  document.getElementById('grade-chip').textContent = STATE.grade === 'grade2' ? '📗 Grade 2' : '📘 Grade 3';
+
+  // Load progress
+  try {
+    const resp = await fetch(`/api/progress/${encodeURIComponent(STATE.name)}`);
+    if (resp.ok) {
+      const data = await resp.json();
+      STATE.stars   = data.stars   || 0;
+      STATE.streak  = data.streak  || 0;
+      STATE.badges  = data.badges  || [];
+      STATE.history = data.history || {};
+    }
+  } catch(e){}
+  updateHeader();
+  buildNav();
+  await loadSection(CURRICULUM[STATE.grade][0].id);
+}
+
+function resetApp() {
+  document.getElementById('welcome-screen').style.display = 'flex';
+  document.getElementById('app-header').style.display = 'none';
+  document.getElementById('nav-wrap').style.display = 'none';
+  document.getElementById('modules-wrap').innerHTML = '';
+  document.getElementById('nav').innerHTML = '';
+}
+
+function switchGrade() {
+  STATE.grade = STATE.grade === 'grade2' ? 'grade3' : 'grade2';
+  document.getElementById('grade-chip').textContent = STATE.grade === 'grade2' ? '📗 Grade 2' : '📘 Grade 3';
+  document.getElementById('modules-wrap').innerHTML = '';
+  buildNav();
+  loadSection(CURRICULUM[STATE.grade][0].id);
+}
+
+function updateHeader() {
+  document.getElementById('star-count').textContent = STATE.stars;
+  document.getElementById('streak-count').textContent = STATE.streak;
+}
+
+// ═══════════════════════════════════════════════════════════════
+//  NAVIGATION
+// ═══════════════════════════════════════════════════════════════
+let currentSection = null;
+function buildNav() {
+  const nav = document.getElementById('nav');
+  nav.innerHTML = '';
+  CURRICULUM[STATE.grade].forEach((sec, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'nav-tab' + (i === 0 ? ' active' : '');
+    btn.style.setProperty('--tab-color', sec.color);
+    if (i === 0) btn.style.background = sec.gradient;
+    btn.innerHTML = `${sec.label} <span class="tab-badge">${sec.topics.length}</span>`;
+    btn.onclick = () => {
+      document.querySelectorAll('.nav-tab').forEach(t => {
+        t.classList.remove('active');
+        t.style.background = '';
+      });
+      btn.classList.add('active');
+      btn.style.background = sec.gradient;
+      SFX.play('nav');
+      loadSection(sec.id);
+    };
+    nav.appendChild(btn);
+  });
+}
+
+// ═══════════════════════════════════════════════════════════════
+//  LOAD SECTION
+// ═══════════════════════════════════════════════════════════════
+async function loadSection(sectionId) {
+  currentSection = sectionId;
+  const wrap = document.getElementById('modules-wrap');
+  const secMeta = CURRICULUM[STATE.grade].find(s => s.id === sectionId);
+  if (!secMeta) return;
+
+  // Show loading
+  wrap.innerHTML = `<div style="text-align:center;padding:40px;color:var(--text-sub)"><div class="spinner" style="width:32px;height:32px;margin:0 auto 12px"></div>Loading ${secMeta.label}…</div>`;
+
+  const cacheKey = `${STATE.grade}/${sectionId}`;
+  if (!DATA[cacheKey]) {
+    try {
+      const r = await fetch(`/api/${STATE.grade}/${sectionId}`);
+      if (r.ok) {
+        const json = await r.json();
+        DATA[cacheKey] = json.files || [];
+      } else {
+        DATA[cacheKey] = [];
+      }
+    } catch(e) { DATA[cacheKey] = []; }
+  }
+
+  wrap.innerHTML = '';
+
+  // Fun fact
+  const ff = FUN_FACTS[Math.floor(Math.random() * FUN_FACTS.length)];
+  wrap.innerHTML += `<div class="fun-fact fadeUp">${ff.icon} <span><strong>Fun Fact:</strong> ${ff.text}</span></div>`;
+
+  // Section header
+  wrap.innerHTML += `
+    <div class="ollie fadeUp">
+      <span class="ollie-avatar">🤖</span>
+      <div>
+        <div class="ollie-name">Sparky says</div>
+        <div class="ollie-text">${SPARKY_MSGS[Math.floor(Math.random() * SPARKY_MSGS.length)]} You're exploring <strong>${secMeta.label}</strong> today!</div>
+      </div>
+    </div>`;
+
+  const modules = DATA[cacheKey];
+  if (!modules.length) {
+    wrap.innerHTML += `<div class="m3-card fadeUp" style="text-align:center;padding:32px">
+      <div style="font-size:48px;margin-bottom:10px">🚧</div>
+      <div style="font-weight:800;color:var(--text-main)">Coming soon!</div>
+      <div style="color:var(--text-sub);margin-top:6px">More exercises for this topic are being built by Sparky! 🤖</div>
+    </div>`;
+    return;
+  }
+
+  // Topic grid if multiple modules
+  if (modules.length > 1) {
+    const grid = document.createElement('div');
+    grid.className = 'topic-grid fadeUp';
+    modules.forEach(mod => {
+      const done = (STATE.history[mod.id] || []).length;
+      const total = (mod.exercises || []).length;
+      const pct = total ? Math.round(done / total * 100) : 0;
+      const card = document.createElement('div');
+      card.className = 'topic-card';
+      card.innerHTML = `
+        <span class="topic-icon">${mod.emoji || '📄'}</span>
+        <div class="topic-info">
+          <div class="topic-title">${mod.title}</div>
+          <div class="topic-count">${total} questions · ${pct}% done</div>
+          <div class="topic-prog"><div class="topic-prog-fill" style="width:${pct}%"></div></div>
+        </div>`;
+      card.onclick = () => openModule(mod, secMeta);
+      grid.appendChild(card);
+    });
+    wrap.appendChild(grid);
+  } else {
+    openModule(modules[0], secMeta, wrap);
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════
+//  MODULE VIEW
+// ═══════════════════════════════════════════════════════════════
+function openModule(mod, secMeta, container) {
+  const wrap = container || document.getElementById('modules-wrap');
+  wrap.innerHTML = '';
+
+  // Sparky + AI button bar
+  const modId = mod.id;
+  const aiCool = aiState[modId]?.cooldownUntil && aiState[modId].cooldownUntil > Date.now();
+  const aiKey  = `${STATE.grade}/${currentSection}/${modId}`;
+  window.__aiMeta[modId] = {
+    grade: STATE.grade, section: currentSection, modId,
+    modTitle: mod.title, modDescription: mod.description,
+    sampleExercises: (mod.exercises||[]).slice(0,2)
+  };
+
+  wrap.innerHTML = `
+    <div class="ollie fadeUp">
+      <span class="ollie-avatar">🤖</span>
+      <div style="flex:1">
+        <div class="ollie-name">Sparky — ${secMeta.label}</div>
+        <div class="ollie-text">${mod.description || 'Time to practise!'}</div>
+        <div class="ollie-actions">
+          <button class="btn btn-ai btn-sm" id="ai-btn-${modId}" data-fetchai="${modId}"
+            title="Generate new AI questions" ${aiCool?'style="display:none"':''}>✨ AI Questions</button>
+          <div class="ai-cooldown" id="ai-cd-${modId}" style="display:none"></div>
+        </div>
+      </div>
+    </div>`;
+
+  // Back button (if not single-topic section)
+  const secTopics = (CURRICULUM[STATE.grade].find(s=>s.id===currentSection)||{}).topics||[];
+  if (secTopics.length > 1) {
+    wrap.innerHTML += `<button class="btn-outline fadeUp" style="margin-bottom:12px" onclick="loadSection('${currentSection}')">← Back to ${secMeta.label}</button>`;
+  }
+
+  buildQuiz(mod, secMeta, wrap);
+  wireAIButton(modId);
+}
+
+// ═══════════════════════════════════════════════════════════════
+//  SCIENCE SVG ILLUSTRATIONS
+// ═══════════════════════════════════════════════════════════════
+const SCIENCE_IMAGES = {
+
+"water-cycle": `<svg viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" font-family="Nunito,sans-serif">
+  <defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#87CEEB"/><stop offset="100%" stop-color="#E0F7FA"/></linearGradient></defs>
+  <rect width="320" height="180" fill="url(#sky)" rx="10"/>
+  <ellipse cx="160" cy="30" rx="55" ry="22" fill="#B0BEC5" opacity=".8"/>
+  <ellipse cx="135" cy="28" rx="35" ry="18" fill="#CFD8DC" opacity=".9"/>
+  <text x="160" y="34" text-anchor="middle" font-size="9" font-weight="800" fill="#546E7A">☁️ CLOUD</text>
+  <path d="M100 50 Q80 90 90 120" stroke="#1565C0" stroke-width="2" fill="none" stroke-dasharray="4,3"/>
+  <text x="62" y="88" font-size="8" font-weight="700" fill="#1565C0">💧 Rain</text>
+  <rect x="0" y="145" width="320" height="35" fill="#1976D2" rx="0"/>
+  <text x="160" y="163" text-anchor="middle" font-size="9" font-weight="800" fill="#E3F2FD">🌊 OCEAN / LAKE</text>
+  <path d="M220 140 Q240 80 180 40" stroke="#FF7043" stroke-width="2" fill="none" stroke-dasharray="4,3"/>
+  <text x="240" y="90" font-size="8" font-weight="700" fill="#D84315">☀️ Evaporation</text>
+  <circle cx="260" cy="158" r="4" fill="#FFF176" opacity=".9"/>
+  <circle cx="270" cy="150" r="3" fill="#FFF176" opacity=".8"/>
+  <circle cx="280" cy="155" r="3.5" fill="#FFF176" opacity=".7"/>
+  <text x="45" y="130" font-size="8" font-weight="700" fill="#2E7D32">🌿 Run-off</text>
+  <path d="M90 122 Q110 140 145 145" stroke="#2E7D32" stroke-width="2" fill="none"/>
+</svg>`,
+
+"states-of-matter": `<svg viewBox="0 0 320 160" xmlns="http://www.w3.org/2000/svg" font-family="Nunito,sans-serif">
+  <rect width="320" height="160" fill="#F3E5F5" rx="10"/>
+  <rect x="10" y="30" width="90" height="110" rx="8" fill="#BBDEFB" stroke="#1565C0" stroke-width="2"/>
+  <text x="55" y="20" text-anchor="middle" font-size="10" font-weight="900" fill="#1565C0">SOLID</text>
+  <circle cx="30" cy="55" r="7" fill="#1565C0"/><circle cx="55" cy="55" r="7" fill="#1565C0"/><circle cx="80" cy="55" r="7" fill="#1565C0"/>
+  <circle cx="30" cy="78" r="7" fill="#1565C0"/><circle cx="55" cy="78" r="7" fill="#1565C0"/><circle cx="80" cy="78" r="7" fill="#1565C0"/>
+  <circle cx="30" cy="101" r="7" fill="#1565C0"/><circle cx="55" cy="101" r="7" fill="#1565C0"/><circle cx="80" cy="101" r="7" fill="#1565C0"/>
+  <text x="55" y="128" text-anchor="middle" font-size="8" fill="#1565C0" font-weight="700">tight rows</text>
+  <rect x="115" y="30" width="90" height="110" rx="8" fill="#C8E6C9" stroke="#2E7D32" stroke-width="2"/>
+  <text x="160" y="20" text-anchor="middle" font-size="10" font-weight="900" fill="#2E7D32">LIQUID</text>
+  <circle cx="132" cy="60" r="7" fill="#2E7D32"/><circle cx="160" cy="55" r="7" fill="#2E7D32"/><circle cx="188" cy="62" r="7" fill="#2E7D32"/>
+  <circle cx="126" cy="82" r="7" fill="#2E7D32"/><circle cx="155" cy="79" r="7" fill="#2E7D32"/><circle cx="183" cy="84" r="7" fill="#2E7D32"/>
+  <circle cx="135" cy="104" r="7" fill="#2E7D32"/><circle cx="163" cy="100" r="7" fill="#2E7D32"/><circle cx="187" cy="107" r="7" fill="#2E7D32"/>
+  <text x="160" y="128" text-anchor="middle" font-size="8" fill="#2E7D32" font-weight="700">flow freely</text>
+  <rect x="220" y="30" width="90" height="110" rx="8" fill="#FFCCBC" stroke="#BF360C" stroke-width="2"/>
+  <text x="265" y="20" text-anchor="middle" font-size="10" font-weight="900" fill="#BF360C">GAS</text>
+  <circle cx="235" cy="48" r="7" fill="#BF360C"/><circle cx="295" cy="52" r="7" fill="#BF360C"/>
+  <circle cx="260" cy="70" r="7" fill="#BF360C"/><circle cx="240" cy="90" r="7" fill="#BF360C"/>
+  <circle cx="285" cy="85" r="7" fill="#BF360C"/><circle cx="255" cy="108" r="7" fill="#BF360C"/>
+  <circle cx="290" cy="115" r="7" fill="#BF360C"/><circle cx="232" cy="118" r="7" fill="#BF360C"/>
+  <text x="265" y="128" text-anchor="middle" font-size="8" fill="#BF360C" font-weight="700">spread out</text>
+</svg>`,
+
+"magnet-field": `<svg viewBox="0 0 320 160" xmlns="http://www.w3.org/2000/svg" font-family="Nunito,sans-serif">
+  <rect width="320" height="160" fill="#E8EAF6" rx="10"/>
+  <rect x="110" y="65" width="45" height="35" rx="6" fill="#E53935"/>
+  <text x="132" y="87" text-anchor="middle" font-size="13" font-weight="900" fill="white">N</text>
+  <rect x="165" y="65" width="45" height="35" rx="6" fill="#1565C0"/>
+  <text x="187" y="87" text-anchor="middle" font-size="13" font-weight="900" fill="white">S</text>
+  <path d="M155 45 Q160 20 165 45" stroke="#7B1FA2" stroke-width="2" fill="none"/>
+  <path d="M145 43 Q160 10 175 43" stroke="#7B1FA2" stroke-width="2" fill="none"/>
+  <path d="M135 48 Q160 5 185 48" stroke="#7B1FA2" stroke-width="2" fill="none"/>
+  <path d="M155 115 Q160 140 165 115" stroke="#7B1FA2" stroke-width="2" fill="none"/>
+  <path d="M145 117 Q160 150 175 117" stroke="#7B1FA2" stroke-width="2" fill="none"/>
+  <path d="M135 112 Q160 155 185 112" stroke="#7B1FA2" stroke-width="2" fill="none"/>
+  <path d="M110 82 Q75 82 70 55 Q65 30 100 30" stroke="#7B1FA2" stroke-width="1.5" fill="none"/>
+  <path d="M110 83 Q60 83 55 80 Q30 80 30 82 Q30 84 55 84 Q60 84 110 84" stroke="#7B1FA2" stroke-width="1.5" fill="none"/>
+  <path d="M210 82 Q245 82 250 55 Q255 30 220 30" stroke="#7B1FA2" stroke-width="1.5" fill="none"/>
+  <text x="65" y="155" text-anchor="middle" font-size="9" font-weight="700" fill="#4A148C">field lines</text>
+  <text x="255" y="155" text-anchor="middle" font-size="9" font-weight="700" fill="#4A148C">attract!</text>
+</svg>`,
+
+"food-chain": `<svg viewBox="0 0 320 140" xmlns="http://www.w3.org/2000/svg" font-family="Nunito,sans-serif">
+  <rect width="320" height="140" fill="#E8F5E9" rx="10"/>
+  <text x="30" y="45" font-size="28">🌱</text>
+  <text x="22" y="65" font-size="8" font-weight="900" fill="#2E7D32" text-anchor="middle">PLANT</text>
+  <text x="22" y="75" font-size="7" fill="#388E3C" text-anchor="middle">Producer</text>
+  <text x="55" y="72" font-size="18" fill="#1B5E20">→</text>
+  <text x="95" y="45" font-size="28">🐛</text>
+  <text x="109" y="65" font-size="8" font-weight="900" fill="#558B2F" text-anchor="middle">CATERPILLAR</text>
+  <text x="109" y="75" font-size="7" fill="#689F38" text-anchor="middle">Herbivore</text>
+  <text x="140" y="72" font-size="18" fill="#1B5E20">→</text>
+  <text x="175" y="45" font-size="28">🐸</text>
+  <text x="189" y="65" font-size="8" font-weight="900" fill="#00695C" text-anchor="middle">FROG</text>
+  <text x="189" y="75" font-size="7" fill="#00897B" text-anchor="middle">Carnivore</text>
+  <text x="218" y="72" font-size="18" fill="#1B5E20">→</text>
+  <text x="255" y="43" font-size="28">🦅</text>
+  <text x="269" y="65" font-size="8" font-weight="900" fill="#4E342E" text-anchor="middle">EAGLE</text>
+  <text x="269" y="75" font-size="7" fill="#6D4C41" text-anchor="middle">Top Predator</text>
+  <text x="160" y="115" text-anchor="middle" font-size="9" font-weight="800" fill="#33691E">Energy flows from producers → consumers</text>
+  <rect x="5" y="105" width="310" height="16" rx="5" fill="#C8E6C9" opacity=".6"/>
+</svg>`,
+
+"plant-parts": `<svg viewBox="0 0 320 170" xmlns="http://www.w3.org/2000/svg" font-family="Nunito,sans-serif">
+  <rect width="320" height="170" fill="#F1F8E9" rx="10"/>
+  <rect x="148" y="135" width="24" height="30" fill="#6D4C41" rx="3"/>
+  <path d="M160 135 Q160 80 160 50" stroke="#388E3C" stroke-width="5" fill="none"/>
+  <path d="M160 90 Q130 75 110 80" stroke="#388E3C" stroke-width="4" fill="none"/>
+  <ellipse cx="100" cy="80" rx="22" ry="13" fill="#66BB6A" transform="rotate(-20,100,80)"/>
+  <path d="M160 70 Q185 55 205 60" stroke="#388E3C" stroke-width="4" fill="none"/>
+  <ellipse cx="215" cy="58" rx="20" ry="11" fill="#66BB6A" transform="rotate(15,215,58)"/>
+  <circle cx="160" cy="42" r="18" fill="#FFEE58"/>
+  <circle cx="160" cy="42" r="10" fill="#FFA726"/>
+  <text x="160" y="47" text-anchor="middle" font-size="9" font-weight="900" fill="#E65100">🌸</text>
+  <path d="M160 135 Q145 150 130 155" stroke="#A5D6A7" stroke-width="3" fill="none"/>
+  <path d="M160 135 Q175 150 190 155" stroke="#A5D6A7" stroke-width="3" fill="none"/>
+  <text x="75" y="45" font-size="8" font-weight="800" fill="#F57F17">FLOWER</text>
+  <line x1="155" y1="44" x2="120" y2="46" stroke="#F57F17" stroke-width="1" stroke-dasharray="3,2"/>
+  <text x="55" y="82" font-size="8" font-weight="800" fill="#2E7D32">LEAF</text>
+  <line x1="90" y1="81" x2="78" y2="81" stroke="#2E7D32" stroke-width="1" stroke-dasharray="3,2"/>
+  <text x="170" y="110" font-size="8" font-weight="800" fill="#1B5E20">STEM</text>
+  <line x1="170" y1="107" x2="163" y2="100" stroke="#1B5E20" stroke-width="1" stroke-dasharray="3,2"/>
+  <text x="170" y="148" font-size="8" font-weight="800" fill="#5D4037">ROOTS</text>
+  <line x1="170" y1="145" x2="165" y2="148" stroke="#5D4037" stroke-width="1" stroke-dasharray="3,2"/>
+</svg>`,
+
+"volcano": `<svg viewBox="0 0 320 170" xmlns="http://www.w3.org/2000/svg" font-family="Nunito,sans-serif">
+  <defs><linearGradient id="vsky" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FF7043"/><stop offset="100%" stop-color="#FFCC02"/></linearGradient></defs>
+  <rect width="320" height="170" fill="url(#vsky)" rx="10"/>
+  <polygon points="160,20 260,150 60,150" fill="#5D4037"/>
+  <polygon points="160,20 200,150 120,150" fill="#795548"/>
+  <polygon points="150,18 170,18 180,50 140,50" fill="#FF3D00"/>
+  <ellipse cx="160" cy="18" rx="22" ry="8" fill="#FF6D00"/>
+  <path d="M155 15 Q148 0 140 -5" stroke="#FF3D00" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <path d="M163 13 Q165 -5 162 -10" stroke="#FF6D00" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <path d="M168 15 Q178 0 184 -3" stroke="#FFAB40" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <rect x="0" y="148" width="320" height="22" fill="#3E2723" rx="0"/>
+  <path d="M158 50 Q155 80 157 110 Q158 130 160 150" stroke="#FF3D00" stroke-width="3" fill="none" opacity=".7"/>
+  <text x="218" y="90" font-size="9" font-weight="800" fill="#FFF" opacity=".9">🔥 Lava</text>
+  <text x="160" y="165" text-anchor="middle" font-size="9" font-weight="800" fill="#FFCC80">Magma bursts through Earth's crust!</text>
+</svg>`,
+
+"butterfly-lifecycle": `<svg viewBox="0 0 320 160" xmlns="http://www.w3.org/2000/svg" font-family="Nunito,sans-serif">
+  <rect width="320" height="160" fill="#FFF9C4" rx="10"/>
+  <circle cx="40" cy="75" r="28" fill="#E8F5E9" stroke="#66BB6A" stroke-width="2"/>
+  <text x="40" y="68" text-anchor="middle" font-size="18">🥚</text>
+  <text x="40" y="90" text-anchor="middle" font-size="8" font-weight="900" fill="#2E7D32">EGG</text>
+  <text x="40" y="102" text-anchor="middle" font-size="7" fill="#388E3C">Stage 1</text>
+  <path d="M70 75 Q90 75 100 75" stroke="#FFA726" stroke-width="2" fill="none"/>
+  <text x="85" y="72" font-size="10">➡</text>
+  <circle cx="130" cy="75" r="28" fill="#DCEDC8" stroke="#8BC34A" stroke-width="2"/>
+  <text x="130" y="68" text-anchor="middle" font-size="18">🐛</text>
+  <text x="130" y="90" text-anchor="middle" font-size="8" font-weight="900" fill="#33691E">CATERPILLAR</text>
+  <text x="130" y="102" text-anchor="middle" font-size="7" fill="#558B2F">Stage 2</text>
+  <text x="168" y="72" font-size="10">➡</text>
+  <circle cx="200" cy="75" r="28" fill="#FFF8E1" stroke="#FFCA28" stroke-width="2"/>
+  <text x="200" y="68" text-anchor="middle" font-size="18">🫘</text>
+  <text x="200" y="90" text-anchor="middle" font-size="8" font-weight="900" fill="#F57F17">CHRYSALIS</text>
+  <text x="200" y="102" text-anchor="middle" font-size="7" fill="#FF8F00">Stage 3</text>
+  <text x="238" y="72" font-size="10">➡</text>
+  <circle cx="280" cy="75" r="28" fill="#E8EAF6" stroke="#7986CB" stroke-width="2"/>
+  <text x="280" y="68" text-anchor="middle" font-size="18">🦋</text>
+  <text x="280" y="90" text-anchor="middle" font-size="8" font-weight="900" fill="#303F9F">BUTTERFLY</text>
+  <text x="280" y="102" text-anchor="middle" font-size="7" fill="#3949AB">Stage 4</text>
+  <text x="160" y="140" text-anchor="middle" font-size="9" font-weight="800" fill="#6A1B9A">This is called METAMORPHOSIS 🎉</text>
+</svg>`,
+
+"earth-layers": `<svg viewBox="0 0 300 160" xmlns="http://www.w3.org/2000/svg" font-family="Nunito,sans-serif">
+  <rect width="300" height="160" fill="#E3F2FD" rx="10"/>
+  <circle cx="150" cy="90" r="80" fill="#FF7043"/>
+  <text x="150" y="95" text-anchor="middle" font-size="9" font-weight="900" fill="white">INNER CORE</text>
+  <text x="150" y="108" text-anchor="middle" font-size="7" fill="#FFE0B2">solid iron</text>
+  <circle cx="150" cy="90" r="80" fill="none" stroke="#FF5722" stroke-width="1" opacity=".4"/>
+  <path d="M150 10 A80 80 0 0 1 230 90" fill="#FF8A65" opacity=".85"/>
+  <text x="205" y="55" font-size="7" font-weight="900" fill="white" transform="rotate(40,205,55)">OUTER CORE</text>
+  <path d="M150 10 A80 80 0 0 1 230 90" fill="none"/>
+  <path d="M150 25 A65 65 0 0 1 215 90" fill="#FFA726"/>
+  <text x="195" y="60" font-size="7" font-weight="900" fill="white" transform="rotate(40,195,60)">MANTLE</text>
+  <path d="M150 62 A28 28 0 0 1 178 90" fill="#8BC34A"/>
+  <text x="168" y="72" font-size="6" font-weight="900" fill="white" transform="rotate(40,168,72)">CRUST</text>
+  <line x1="230" y1="90" x2="260" y2="65" stroke="#666" stroke-width="1" stroke-dasharray="3,2"/>
+  <text x="263" y="63" font-size="8" font-weight="700" fill="#E64A19">Outer Core</text>
+  <line x1="215" y1="57" x2="260" y2="40" stroke="#666" stroke-width="1" stroke-dasharray="3,2"/>
+  <text x="263" y="38" font-size="8" font-weight="700" fill="#E65100">Mantle</text>
+</svg>`,
+
+"photosynthesis": `<svg viewBox="0 0 320 160" xmlns="http://www.w3.org/2000/svg" font-family="Nunito,sans-serif">
+  <rect width="320" height="160" fill="#F9FBE7" rx="10"/>
+  <circle cx="50" cy="35" r="25" fill="#FFF176" stroke="#F9A825" stroke-width="3"/>
+  <text x="50" y="40" text-anchor="middle" font-size="16">☀️</text>
+  <path d="M75 35 Q100 50 110 70" stroke="#FFA000" stroke-width="2" stroke-dasharray="5,3"/>
+  <text x="68" y="65" font-size="8" fill="#F57F17" font-weight="700">light</text>
+  <text x="10" y="100" font-size="8" font-weight="800" fill="#1565C0">CO₂ →</text>
+  <path d="M55 95 Q90 90 110 80" stroke="#1565C0" stroke-width="2" stroke-dasharray="4,3"/>
+  <text x="10" y="115" font-size="7" fill="#1976D2">(carbon dioxide)</text>
+  <ellipse cx="160" cy="90" rx="50" ry="30" fill="#66BB6A"/>
+  <ellipse cx="145" cy="88" rx="35" ry="20" fill="#81C784" opacity=".7"/>
+  <text x="160" y="88" text-anchor="middle" font-size="9" font-weight="900" fill="white">LEAF</text>
+  <text x="160" y="100" text-anchor="middle" font-size="7" fill="#E8F5E9">Photosynthesis</text>
+  <text x="10" y="135" font-size="8" font-weight="800" fill="#2196F3">H₂O →</text>
+  <path d="M55 132 Q90 115 110 105" stroke="#2196F3" stroke-width="2" stroke-dasharray="4,3"/>
+  <text x="10" y="148" font-size="7" fill="#1976D2">(water)</text>
+  <path d="M210 90 Q240 80 265 70" stroke="#43A047" stroke-width="2" stroke-dasharray="4,3"/>
+  <text x="258" y="60" font-size="9" font-weight="800" fill="#1B5E20">O₂ 🌿</text>
+  <text x="250" y="73" font-size="7" fill="#33691E">(oxygen out)</text>
+  <path d="M210 95 Q240 110 265 115" stroke="#795548" stroke-width="2" stroke-dasharray="4,3"/>
+  <text x="255" y="128" font-size="9" font-weight="800" fill="#4E342E">Sugar 🍬</text>
+  <text x="252" y="140" font-size="7" fill="#6D4C41">(food made)</text>
+</svg>`,
+
+"force-motion": `<svg viewBox="0 0 320 150" xmlns="http://www.w3.org/2000/svg" font-family="Nunito,sans-serif">
+  <rect width="320" height="150" fill="#E8EAF6" rx="10"/>
+  <rect x="0" y="120" width="320" height="30" fill="#BDBDBD" rx="0"/>
+  <text x="160" y="142" text-anchor="middle" font-size="8" fill="#616161" font-weight="700">surface / ground</text>
+  <rect x="120" y="88" width="60" height="32" rx="8" fill="#42A5F5"/>
+  <circle cx="135" cy="124" r="8" fill="#1A237E"/>
+  <circle cx="165" cy="124" r="8" fill="#1A237E"/>
+  <text x="150" y="109" text-anchor="middle" font-size="8" font-weight="900" fill="white">🚗</text>
+  <polygon points="40,104 110,104 80,88" fill="#FF5722" opacity=".9"/>
+  <text x="75" y="100" text-anchor="middle" font-size="8" font-weight="900" fill="white">PUSH</text>
+  <line x1="40" y1="104" x2="15" y2="104" stroke="#FF5722" stroke-width="3"/>
+  <polygon points="40,104 15,100 15,108" fill="#FF5722"/>
+  <polygon points="280,104 210,104 240,88" fill="#AB47BC" opacity=".9"/>
+  <text x="245" y="100" text-anchor="middle" font-size="8" font-weight="900" fill="white">PUSH</text>
+  <line x1="280" y1="104" x2="305" y2="104" stroke="#AB47BC" stroke-width="3"/>
+  <polygon points="305,104 280,100 280,108" fill="#AB47BC"/>
+  <text x="160" y="55" text-anchor="middle" font-size="10" font-weight="900" fill="#1A237E">Forces Make Things MOVE!</text>
+  <text x="160" y="72" text-anchor="middle" font-size="9" fill="#3949AB">A push or pull changes an object's motion</text>
+</svg>`,
+
+"measurement-tools": `<svg viewBox="0 0 320 160" xmlns="http://www.w3.org/2000/svg" font-family="Nunito,sans-serif">
+  <rect width="320" height="160" fill="#FFF3E0" rx="10"/>
+  <rect x="15" y="50" width="12" height="90" rx="3" fill="#78909C"/>
+  <rect x="12" y="50" width="18" height="8" rx="2" fill="#546E7A"/>
+  <line x1="27" y1="65" x2="32" y2="65" stroke="#CFD8DC" stroke-width="1.5"/>
+  <line x1="27" y1="75" x2="30" y2="75" stroke="#CFD8DC" stroke-width="1"/>
+  <line x1="27" y1="85" x2="32" y2="85" stroke="#CFD8DC" stroke-width="1.5"/>
+  <line x1="27" y1="95" x2="30" y2="95" stroke="#CFD8DC" stroke-width="1"/>
+  <line x1="27" y1="105" x2="32" y2="105" stroke="#CFD8DC" stroke-width="1.5"/>
+  <text x="21" y="47" font-size="7" fill="#37474F" text-anchor="middle" font-weight="700">🌡️</text>
+  <text x="21" y="152" font-size="7" fill="#455A64" text-anchor="middle" font-weight="700">Temp</text>
+  <rect x="60" y="60" width="70" height="28" rx="5" fill="#4FC3F7" stroke="#0277BD" stroke-width="2"/>
+  <line x1="95" y1="88" x2="95" y2="98" stroke="#0277BD" stroke-width="2"/>
+  <rect x="85" y="98" width="20" height="8" rx="2" fill="#0288D1"/>
+  <text x="95" y="78" text-anchor="middle" font-size="8" font-weight="900" fill="white">500 mL</text>
+  <text x="95" y="152" font-size="7" fill="#01579B" text-anchor="middle" font-weight="700">Volume</text>
+  <rect x="155" y="78" width="80" height="12" rx="3" fill="#A1887F"/>
+  <line x1="195" y1="78" x2="195" y2="60" stroke="#795548" stroke-width="2"/>
+  <circle cx="195" cy="58" r="6" fill="#4E342E"/>
+  <line x1="155" y1="84" x2="150" y2="84" stroke="#795548" stroke-width="2"/>
+  <line x1="235" y1="84" x2="240" y2="84" stroke="#795548" stroke-width="2"/>
+  <text x="195" y="152" font-size="7" fill="#4E342E" text-anchor="middle" font-weight="700">Mass/Weight</text>
+  <rect x="260" y="50" width="50" height="14" rx="3" fill="#CE93D8"/>
+  <line x1="260" y1="57" x2="260" y2="65" stroke="#7B1FA2" stroke-width="1.5"/>
+  <line x1="270" y1="57" x2="270" y2="62" stroke="#7B1FA2" stroke-width="1"/>
+  <line x1="280" y1="57" x2="280" y2="65" stroke="#7B1FA2" stroke-width="1.5"/>
+  <line x1="290" y1="57" x2="290" y2="62" stroke="#7B1FA2" stroke-width="1"/>
+  <line x1="300" y1="57" x2="300" y2="65" stroke="#7B1FA2" stroke-width="1.5"/>
+  <text x="285" y="152" font-size="7" fill="#6A1B9A" text-anchor="middle" font-weight="700">Length</text>
+  <text x="160" y="25" text-anchor="middle" font-size="11" font-weight="900" fill="#E65100">📏 Measurement Tools</text>
+</svg>`,
+
+"frog-lifecycle": `<svg viewBox="0 0 320 160" xmlns="http://www.w3.org/2000/svg" font-family="Nunito,sans-serif">
+  <rect width="320" height="160" fill="#E0F2F1" rx="10"/>
+  <circle cx="40" cy="72" r="26" fill="#B2DFDB" stroke="#00897B" stroke-width="2"/>
+  <text x="40" y="65" text-anchor="middle" font-size="16">🟤</text>
+  <text x="40" y="84" text-anchor="middle" font-size="8" font-weight="900" fill="#004D40">EGGS</text>
+  <text x="40" y="95" text-anchor="middle" font-size="6.5" fill="#00695C">in water</text>
+  <text x="69" y="69" font-size="12">→</text>
+  <circle cx="115" cy="72" r="26" fill="#C8E6C9" stroke="#388E3C" stroke-width="2"/>
+  <text x="115" y="65" text-anchor="middle" font-size="16">🐟</text>
+  <text x="115" y="84" text-anchor="middle" font-size="8" font-weight="900" fill="#1B5E20">TADPOLE</text>
+  <text x="115" y="95" text-anchor="middle" font-size="6.5" fill="#2E7D32">has tail</text>
+  <text x="145" y="69" font-size="12">→</text>
+  <circle cx="192" cy="72" r="26" fill="#DCEDC8" stroke="#689F38" stroke-width="2"/>
+  <text x="192" y="65" text-anchor="middle" font-size="14">🐸💧</text>
+  <text x="192" y="84" text-anchor="middle" font-size="7" font-weight="900" fill="#33691E">FROGLET</text>
+  <text x="192" y="95" text-anchor="middle" font-size="6.5" fill="#558B2F">grows legs</text>
+  <text x="221" y="69" font-size="12">→</text>
+  <circle cx="270" cy="72" r="26" fill="#F1F8E9" stroke="#8BC34A" stroke-width="2"/>
+  <text x="270" y="65" text-anchor="middle" font-size="16">🐸</text>
+  <text x="270" y="84" text-anchor="middle" font-size="8" font-weight="900" fill="#33691E">ADULT FROG</text>
+  <text x="270" y="95" text-anchor="middle" font-size="6.5" fill="#558B2F">on land</text>
+  <text x="160" y="130" text-anchor="middle" font-size="9" font-weight="800" fill="#004D40">Life Cycle: Egg → Tadpole → Froglet → Frog</text>
+</svg>`,
+
+"weather-symbols": `<svg viewBox="0 0 320 155" xmlns="http://www.w3.org/2000/svg" font-family="Nunito,sans-serif">
+  <rect width="320" height="155" fill="#E1F5FE" rx="10"/>
+  <text x="160" y="22" text-anchor="middle" font-size="11" font-weight="900" fill="#0277BD">☁️ Weather Types</text>
+  <rect x="10" y="32" width="70" height="60" rx="8" fill="#FFF9C4" stroke="#F9A825" stroke-width="1.5"/>
+  <text x="45" y="60" text-anchor="middle" font-size="22">☀️</text>
+  <text x="45" y="82" text-anchor="middle" font-size="8" font-weight="900" fill="#F57F17">SUNNY</text>
+  <rect x="88" y="32" width="70" height="60" rx="8" fill="#E1F5FE" stroke="#039BE5" stroke-width="1.5"/>
+  <text x="123" y="60" text-anchor="middle" font-size="22">🌧️</text>
+  <text x="123" y="82" text-anchor="middle" font-size="8" font-weight="900" fill="#0277BD">RAINY</text>
+  <rect x="166" y="32" width="70" height="60" rx="8" fill="#E8EAF6" stroke="#5C6BC0" stroke-width="1.5"/>
+  <text x="201" y="60" text-anchor="middle" font-size="22">⛄</text>
+  <text x="201" y="82" text-anchor="middle" font-size="8" font-weight="900" fill="#283593">SNOWY</text>
+  <rect x="244" y="32" width="70" height="60" rx="8" fill="#F3E5F5" stroke="#8E24AA" stroke-width="1.5"/>
+  <text x="279" y="60" text-anchor="middle" font-size="22">⛈️</text>
+  <text x="279" y="82" text-anchor="middle" font-size="8" font-weight="900" fill="#4A148C">STORMY</text>
+  <text x="160" y="115" text-anchor="middle" font-size="9" fill="#01579B" font-weight="700">Weather = what the atmosphere is doing right now</text>
+  <text x="160" y="130" text-anchor="middle" font-size="9" fill="#0277BD" font-weight="700">Climate = the usual weather patterns over many years</text>
+</svg>`,
+
+"simple-machines": `<svg viewBox="0 0 320 155" xmlns="http://www.w3.org/2000/svg" font-family="Nunito,sans-serif">
+  <rect width="320" height="155" fill="#FFF8E1" rx="10"/>
+  <text x="160" y="20" text-anchor="middle" font-size="11" font-weight="900" fill="#E65100">🔧 Simple Machines</text>
+  <rect x="10" y="30" width="90" height="55" rx="6" fill="#BBDEFB" stroke="#1565C0" stroke-width="1.5"/>
+  <line x1="55" y1="38" x2="55" y2="77" stroke="#1565C0" stroke-width="3"/>
+  <line x1="22" y1="65" x2="88" y2="45" stroke="#1565C0" stroke-width="3"/>
+  <circle cx="55" cy="63" r="5" fill="#0D47A1"/>
+  <text x="55" y="94" text-anchor="middle" font-size="8" font-weight="900" fill="#1565C0">LEVER</text>
+  <rect x="115" y="30" width="90" height="55" rx="6" fill="#C8E6C9" stroke="#2E7D32" stroke-width="1.5"/>
+  <circle cx="160" cy="57" r="20" fill="none" stroke="#2E7D32" stroke-width="4"/>
+  <circle cx="160" cy="57" r="8" fill="#1B5E20"/>
+  <text x="160" y="94" text-anchor="middle" font-size="8" font-weight="900" fill="#2E7D32">WHEEL &amp; AXLE</text>
+  <rect x="220" y="30" width="90" height="55" rx="6" fill="#FFE0B2" stroke="#E65100" stroke-width="1.5"/>
+  <line x1="232" y1="77" x2="298" y2="38" stroke="#BF360C" stroke-width="4"/>
+  <polygon points="230,78 240,75 234,85" fill="#BF360C"/>
+  <text x="265" y="94" text-anchor="middle" font-size="8" font-weight="900" fill="#BF360C">INCLINED PLANE</text>
+  <text x="160" y="125" text-anchor="middle" font-size="9" fill="#4E342E" font-weight="700">Simple machines make work easier! 💪</text>
+</svg>`,
+
+"ecosystem": `<svg viewBox="0 0 320 155" xmlns="http://www.w3.org/2000/svg" font-family="Nunito,sans-serif">
+  <defs><linearGradient id="ecosky" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#81D4FA"/><stop offset="60%" stop-color="#C8E6C9"/></linearGradient></defs>
+  <rect width="320" height="155" fill="url(#ecosky)" rx="10"/>
+  <rect x="0" y="115" width="320" height="40" fill="#4CAF50" rx="0"/>
+  <circle cx="60" cy="80" r="22" fill="#2E7D32" opacity=".9"/>
+  <circle cx="55" cy="82" r="16" fill="#388E3C"/>
+  <rect x="56" y="100" width="8" height="16" fill="#6D4C41"/>
+  <circle cx="180" cy="75" r="18" fill="#2E7D32" opacity=".8"/>
+  <rect x="177" y="92" width="6" height="12" fill="#5D4037"/>
+  <text x="110" y="105" font-size="20">🦊</text>
+  <text x="250" y="88" font-size="18">🐦</text>
+  <text x="25" y="130" font-size="14">🌻</text>
+  <text x="80" y="133" font-size="14">🌿</text>
+  <text x="140" y="133" font-size="12">🐜</text>
+  <text x="200" y="133" font-size="14">🍄</text>
+  <text x="255" y="133" font-size="12">🐛</text>
+  <text x="160" y="25" text-anchor="middle" font-size="10" font-weight="900" fill="#004D40">🌍 An Ecosystem</text>
+  <text x="160" y="40" text-anchor="middle" font-size="8" fill="#01579B" font-weight="700">All living &amp; non-living things in an area</text>
+</svg>`,
+
+"phase-change": `<svg viewBox="0 0 320 155" xmlns="http://www.w3.org/2000/svg" font-family="Nunito,sans-serif">
+  <rect width="320" height="155" fill="#E8EAF6" rx="10"/>
+  <rect x="15" y="50" width="70" height="65" rx="10" fill="#BBDEFB" stroke="#1565C0" stroke-width="2"/>
+  <text x="50" y="80" text-anchor="middle" font-size="22">🧊</text>
+  <text x="50" y="103" text-anchor="middle" font-size="9" font-weight="900" fill="#1565C0">SOLID</text>
+  <rect x="125" y="50" width="70" height="65" rx="10" fill="#C8E6C9" stroke="#2E7D32" stroke-width="2"/>
+  <text x="160" y="80" text-anchor="middle" font-size="22">💧</text>
+  <text x="160" y="103" text-anchor="middle" font-size="9" font-weight="900" fill="#2E7D32">LIQUID</text>
+  <rect x="235" y="50" width="70" height="65" rx="10" fill="#FFE0B2" stroke="#E65100" stroke-width="2"/>
+  <text x="270" y="80" text-anchor="middle" font-size="22">♨️</text>
+  <text x="270" y="103" text-anchor="middle" font-size="9" font-weight="900" fill="#BF360C">GAS</text>
+  <path d="M85 68 Q105 58 125 68" stroke="#FF7043" stroke-width="2" fill="none"/>
+  <polygon points="125,65 125,71 132,68" fill="#FF7043"/>
+  <text x="105" y="55" text-anchor="middle" font-size="7" font-weight="700" fill="#E64A19">Melt 🔥</text>
+  <path d="M125 82 Q105 92 85 82" stroke="#1565C0" stroke-width="2" fill="none"/>
+  <polygon points="85,79 85,85 78,82" fill="#1565C0"/>
+  <text x="105" y="98" text-anchor="middle" font-size="7" font-weight="700" fill="#1565C0">Freeze ❄️</text>
+  <path d="M195 68 Q215 58 235 68" stroke="#FF7043" stroke-width="2" fill="none"/>
+  <polygon points="235,65 235,71 242,68" fill="#FF7043"/>
+  <text x="215" y="55" text-anchor="middle" font-size="7" font-weight="700" fill="#E64A19">Evaporate 🔥</text>
+  <path d="M235 82 Q215 92 195 82" stroke="#1565C0" stroke-width="2" fill="none"/>
+  <polygon points="195,79 195,85 188,82" fill="#1565C0"/>
+  <text x="215" y="98" text-anchor="middle" font-size="7" font-weight="700" fill="#1565C0">Condense 💧</text>
+  <text x="160" y="140" text-anchor="middle" font-size="9" font-weight="800" fill="#283593">Heat adds energy; cooling removes energy</text>
+</svg>`
+
+}; // end SCIENCE_IMAGES
+
+// ═══════════════════════════════════════════════════════════════
+//  QUIZ ENGINE
+// ═══════════════════════════════════════════════════════════════
+let PAGE_SIZE = 5;
+const PAGE_STATE = {}; // key: modId → {page, answers:{idx→choice}, qs}
+
+function buildQuiz(mod, secMeta, wrap, extra=[]) {
+  const allQs = [...(mod.exercises||[]), ...extra];
+  const modId = mod.id;
+  if (!PAGE_STATE[modId]) PAGE_STATE[modId] = {page:0, answers:{}, qs: allQs};
+  else { PAGE_STATE[modId].qs = allQs; }
+  const ps = PAGE_STATE[modId];
+
+  const totalPages = Math.ceil(allQs.length / PAGE_SIZE);
+  const start = ps.page * PAGE_SIZE;
+  const pageQs = allQs.slice(start, start + PAGE_SIZE);
+
+  const container = document.createElement('div');
+  container.className = 'card fadeUp';
+  container.id = `quiz-${modId}`;
+
+  // Card accent bar
+  container.innerHTML = `<div class="card-accent" style="background:${secMeta.gradient}"></div>`;
+
+  // Header
+  container.innerHTML += `
+    <div class="mod-head">
+      <div class="mod-icon" style="background:${secMeta.color}22;font-size:24px">${mod.emoji}</div>
+      <div>
+        <div class="mod-title">${mod.title}</div>
+        <div class="mod-sub">${mod.grade ? 'Grade ' + mod.grade : ''} · ${allQs.length} questions</div>
+      </div>
+    </div>
+    <div class="mod-progress"><div class="mod-progress-fill" id="prog-${modId}" style="width:${calcProgress(modId, allQs)}%"></div></div>`;
+
+  // Dot tracker
+  const dotRow = document.createElement('div');
+  dotRow.className = 'q-pag-track';
+  dotRow.id = `dots-${modId}`;
+  allQs.forEach((_,i) => {
+    const d = document.createElement('span');
+    d.className = 'q-dot' + (i===start?'  current':'') + (ps.answers[i]!==undefined?(ps.answers[i]===allQs[i].answer?' done':' wrong-dot'):'');
+    d.title = `Q${i+1}`;
+    d.onclick = () => jumpToPage(modId, Math.floor(i/PAGE_SIZE), mod, secMeta, wrap);
+    dotRow.appendChild(d);
+  });
+  container.appendChild(dotRow);
+
+  // Questions
+  pageQs.forEach((q, qi) => {
+    const gi = start + qi; // global index
+    const answered = ps.answers[gi] !== undefined;
+    const block = document.createElement('div');
+    block.className = 'q-block';
+    block.innerHTML = `<div class="q-num">Question ${gi+1} of ${allQs.length}</div>
+      ${q.svg && SCIENCE_IMAGES[q.svg] ? `<div class="q-svg">${SCIENCE_IMAGES[q.svg]}</div>` : ''}
+      <div class="q-text">${q.question}</div>
+      <div class="choices" id="choices-${modId}-${gi}"></div>
+      <div class="exp-box" id="exp-${modId}-${gi}">${q.exp || ''}</div>`;
+    const choicesEl = block.querySelector(`#choices-${modId}-${gi}`);
+    const letters = ['A','B','C','D'];
+    q.choices.forEach((c, ci) => {
+      const btn = document.createElement('button');
+      btn.className = 'choice-btn';
+      let extraClass = '';
+      if (answered) {
+        btn.disabled = true;
+        if (ci === q.answer) extraClass = ' correct';
+        if (ci === ps.answers[gi] && ps.answers[gi] !== q.answer) extraClass = ' wrong';
+      }
+      btn.className += extraClass;
+      btn.innerHTML = `<span class="choice-letter">${letters[ci]}</span><span>${c}</span>`;
+      if (!answered) {
+        btn.onclick = () => answerQ(modId, gi, ci, q, mod, secMeta, wrap, allQs);
+      }
+      choicesEl.appendChild(btn);
+    });
+    if (answered) block.querySelector(`#exp-${modId}-${gi}`).style.display = 'block';
+    container.appendChild(block);
+  });
+
+  // Pagination
+  const allAnswered = allQs.every((_,i) => ps.answers[i] !== undefined);
+  const pag = document.createElement('div');
+  pag.className = 'q-pag';
+  pag.innerHTML = `
+    <button class="q-pag-btn" ${ps.page===0?'disabled':''} onclick="jumpToPage('${modId}',${ps.page-1},null,null,null)">← Prev</button>
+    <span class="q-pag-info">Page ${ps.page+1} / ${totalPages}</span>
+    <button class="q-pag-btn" ${ps.page>=totalPages-1?'disabled':''} onclick="jumpToPage('${modId}',${ps.page+1},null,null,null)">Next →</button>`;
+  container.appendChild(pag);
+
+  // Score banner (if all answered)
+  if (allAnswered) {
+    const correct = allQs.filter((_,i) => ps.answers[i] === allQs[i].answer).length;
+    const pct = Math.round(correct / allQs.length * 100);
+    const scoreEl = buildScoreBanner(modId, correct, allQs.length, pct, mod, secMeta, wrap, allQs);
+    container.appendChild(scoreEl);
+  }
+
+  wrap.appendChild(container);
+  // Store refs for jumps
+  container.__mod = mod;
+  container.__secMeta = secMeta;
+  container.__wrap = wrap;
+}
+
+function jumpToPage(modId, page, mod, secMeta, wrap) {
+  if (!PAGE_STATE[modId]) return;
+  PAGE_STATE[modId].page = page;
+  const el = document.getElementById(`quiz-${modId}`);
+  const m = mod || el?.__mod;
+  const s = secMeta || el?.__secMeta;
+  const w = wrap || el?.__wrap || document.getElementById('modules-wrap');
+  if (el) el.remove();
+  const extra = (PAGE_STATE[modId]?.qs||[]).slice((m?.exercises||[]).length);
+  buildQuiz(m, s, w, extra);
+}
+
+function answerQ(modId, gi, chosen, q, mod, secMeta, wrap, allQs) {
+  const ps = PAGE_STATE[modId];
+  ps.answers[gi] = chosen;
+
+  const choicesEl = document.getElementById(`choices-${modId}-${gi}`);
+  const expEl = document.getElementById(`exp-${modId}-${gi}`);
+  const btns = choicesEl.querySelectorAll('.choice-btn');
+  btns.forEach((btn, ci) => {
+    btn.disabled = true;
+    if (ci === q.answer) btn.classList.add('correct');
+    if (ci === chosen && chosen !== q.answer) btn.classList.add('wrong');
+  });
+  if (expEl) expEl.style.display = 'block';
+
+  const isCorrect = chosen === q.answer;
+  if (isCorrect) {
+    STATE.stars++;
+    STATE.streak++;
+    SFX.play('correct');
+    flashScreen('correct');
+    animateSparky('correct');
+    spawnParticles(btns[chosen]);
+    animateStarCount();
+    if (STATE.streak % 5 === 0) showStreakCelebration();
+  } else {
+    STATE.streak = 0;
+    SFX.play('wrong');
+    flashScreen('wrong');
+    animateSparky('wrong');
+  }
+  updateHeader();
+  saveProgress();
+
+  // Update dot
+  updateDots(modId, allQs, ps);
+  updateProgress(modId, allQs, ps);
+
+  // Auto-advance after 1.5s if all current page answered
+  const start = ps.page * PAGE_SIZE;
+  const pageQs = allQs.slice(start, start + PAGE_SIZE);
+  const pageAnswered = pageQs.every((_, qi) => ps.answers[start + qi] !== undefined);
+  const allAnswered = allQs.every((_,i) => ps.answers[i] !== undefined);
+
+  if (allAnswered) {
+    setTimeout(() => {
+      const el = document.getElementById(`quiz-${modId}`);
+      if (el) {
+        const extra = (PAGE_STATE[modId]?.qs||[]).slice((mod?.exercises||[]).length);
+        el.remove();
+        buildQuiz(mod, secMeta, wrap, extra);
+      }
+    }, 800);
+  } else if (pageAnswered && ps.page < Math.ceil(allQs.length / PAGE_SIZE) - 1) {
+    setTimeout(() => jumpToPage(modId, ps.page + 1, mod, secMeta, wrap), 900);
+  }
+}
+
+function updateDots(modId, allQs, ps) {
+  const dotRow = document.getElementById(`dots-${modId}`);
+  if (!dotRow) return;
+  const dots = dotRow.querySelectorAll('.q-dot');
+  const start = ps.page * PAGE_SIZE;
+  dots.forEach((d, i) => {
+    d.className = 'q-dot';
+    if (i === start && ps.answers[i] === undefined) d.classList.add('current');
+    if (ps.answers[i] !== undefined) d.classList.add(ps.answers[i] === allQs[i].answer ? 'done' : 'wrong-dot');
+  });
+}
+
+function updateProgress(modId, allQs, ps) {
+  const fill = document.getElementById(`prog-${modId}`);
+  if (fill) fill.style.width = calcProgress(modId, allQs) + '%';
+}
+
+function calcProgress(modId, allQs) {
+  const ps = PAGE_STATE[modId];
+  if (!ps || !allQs.length) return 0;
+  return Math.round(Object.keys(ps.answers).length / allQs.length * 100);
+}
+
+function buildScoreBanner(modId, correct, total, pct, mod, secMeta, wrap, allQs) {
+  const emoji = pct === 100 ? '🏆' : pct >= 80 ? '🌟' : pct >= 60 ? '😊' : '💪';
+  const msg   = pct === 100 ? 'Perfect Score! You\'re a science genius! 🧑‍🔬' :
+                pct >= 80   ? 'Fantastic work! Keep it up! 🚀' :
+                pct >= 60   ? 'Good effort! Review the ones you missed! 📚' :
+                'Keep practising — every try makes you smarter! 💡';
+  const el = document.createElement('div');
+  el.className = 'score-banner';
+  el.innerHTML = `
+    <span class="score-emoji">${emoji}</span>
+    <div class="score-title">${correct} / ${total} Correct!</div>
+    <div class="score-msg">${msg}</div>
+    <div class="btn-row">
+      <button class="btn-outline" onclick="retryModule('${modId}', this)">🔄 Try Again</button>
+      <button class="btn-primary" onclick="loadSection('${currentSection}')">📚 All Topics</button>
+    </div>`;
+
+  // Celebrate on completion
+  setTimeout(() => {
+    if (pct === 100) {
+      SFX.play('complete');
+      spawnConfetti(120);
+    } else if (pct >= 80) {
+      SFX.play('streak');
+      spawnConfetti(60);
+    } else {
+      SFX.play('click');
+    }
+  }, 200);
+
+  return el;
+}
+
+function retryModule(modId, btn) {
+  PAGE_STATE[modId] = null;
+  const el = document.getElementById(`quiz-${modId}`);
+  const m = el?.__mod;
+  const s = el?.__secMeta;
+  const w = el?.__wrap || document.getElementById('modules-wrap');
+  if (el) el.remove();
+  if (m && s) buildQuiz(m, s, w);
+}
+
+// ═══════════════════════════════════════════════════════════════
+//  AI QUESTION GENERATION
+// ═══════════════════════════════════════════════════════════════
+function wireAIButton(modId) {
+  document.querySelectorAll(`[data-fetchai="${modId}"]`).forEach(btn => {
+    btn.addEventListener('click', () => fetchAIQuestions(modId));
+  });
+}
+
+async function fetchAIQuestions(modId) {
+  const meta = window.__aiMeta[modId];
+  if (!meta) return;
+  const btn = document.getElementById(`ai-btn-${modId}`);
+  const cdEl = document.getElementById(`ai-cd-${modId}`);
+  if (!btn) return;
+
+  btn.disabled = true;
+  btn.innerHTML = `<span class="spinner"></span> Generating…`;
+
+  try {
+    const r = await fetch('/api/generate', {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({
+        grade: meta.grade, section: meta.section, modId: meta.modId,
+        modTitle: meta.modTitle, modDescription: meta.modDescription,
+        exerciseSample: meta.sampleExercises, count: 5
+      })
+    });
+    const data = await r.json();
+    if (!r.ok) throw new Error(data.error || 'Server error');
+
+    if (data.questions?.length) {
+      // Merge into current PAGE_STATE
+      const ps = PAGE_STATE[modId];
+      const existing = ps ? ps.qs : [];
+      const combined = [...existing, ...data.questions];
+      if (ps) ps.qs = combined;
+
+      btn.style.display = 'none';
+      if (data.cooldownUntil) {
+        aiState[modId] = {cooldownUntil: data.cooldownUntil};
+        startCooldown(modId, data.cooldownUntil);
+      }
+
+      // Rebuild quiz with new questions
+      const el = document.getElementById(`quiz-${modId}`);
+      const m  = el?.__mod;
+      const s  = el?.__secMeta;
+      const w  = el?.__wrap || document.getElementById('modules-wrap');
+      if (el && m && s) { el.remove(); buildQuiz(m, s, w, combined.slice((m.exercises||[]).length)); }
+
+      showToast(`✨ ${data.questions.length} new AI questions added!`);
+    }
+  } catch(err) {
+    btn.disabled = false;
+    btn.innerHTML = '✨ AI Questions';
+    showToast('⚠️ AI unavailable — check your .env file', true);
+  }
+}
+
+function startCooldown(modId, until) {
+  const cdEl = document.getElementById(`ai-cd-${modId}`);
+  if (!cdEl) return;
+  cdEl.style.display = 'inline';
+  const tick = setInterval(() => {
+    const rem = until - Date.now();
+    if (rem <= 0) { clearInterval(tick); cdEl.style.display = 'none'; return; }
+    cdEl.textContent = `⏱ ${Math.ceil(rem/60000)} min`;
+  }, 10000);
+  cdEl.textContent = `⏱ ${Math.ceil((until-Date.now())/60000)} min`;
+}
+
+// ═══════════════════════════════════════════════════════════════
+//  PROGRESS & PERSISTENCE
+// ═══════════════════════════════════════════════════════════════
+function saveProgress() {
+  const payload = { name: STATE.name, stars: STATE.stars, streak: STATE.streak, badges: STATE.badges, history: STATE.history };
+  fetch(`/api/progress/${encodeURIComponent(STATE.name)}`, {
+    method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload)
+  }).catch(()=>{});
+}
+
+// ═══════════════════════════════════════════════════════════════
+//  SOUND SYSTEM (Web Audio API — no external files needed)
+// ═══════════════════════════════════════════════════════════════
+const SFX = {
+  ctx: null,
+  muted: false,
+
+  _ctx() {
+    if (!this.ctx) {
+      try { this.ctx = new (window.AudioContext || window.webkitAudioContext)(); } catch(e){}
+    }
+    return this.ctx;
+  },
+
+  _tone(freq, type, startTime, duration, gainStart, gainEnd, ctx) {
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.connect(gain); gain.connect(ctx.destination);
+    osc.type = type;
+    osc.frequency.setValueAtTime(freq, startTime);
+    gain.gain.setValueAtTime(gainStart, startTime);
+    gain.gain.exponentialRampToValueAtTime(Math.max(gainEnd, 0.0001), startTime + duration);
+    osc.start(startTime);
+    osc.stop(startTime + duration);
+  },
+
+  play(type) {
+    if (this.muted) return;
+    const ctx = this._ctx();
+    if (!ctx) return;
+    // Resume if suspended (browser autoplay policy)
+    if (ctx.state === 'suspended') ctx.resume();
+    const t = ctx.currentTime;
+
+    if (type === 'correct') {
+      // Cheerful ascending major arpeggio: C5 → E5 → G5
+      [[523.25,'sine'],[659.25,'sine'],[783.99,'sine']].forEach(([f,w],i) => {
+        this._tone(f, w, t + i*0.09, 0.25, 0.22, 0.001, ctx);
+      });
+    } else if (type === 'wrong') {
+      // Gentle descending minor: A4 → F4
+      this._tone(440, 'sawtooth', t,       0.12, 0.15, 0.001, ctx);
+      this._tone(349.23,'sawtooth', t+0.13, 0.18, 0.12, 0.001, ctx);
+    } else if (type === 'streak') {
+      // Fanfare: C5 E5 G5 C6 with staccato
+      [[523.25,0],[659.25,.1],[783.99,.2],[1046.5,.31]].forEach(([f,d]) => {
+        this._tone(f,'triangle', t+d, 0.18, 0.3, 0.001, ctx);
+      });
+    } else if (type === 'complete') {
+      // Triumphant: C5 G5 C6 E6 G6
+      [[523.25,0],[783.99,.12],[1046.5,.24],[1318.51,.38],[1567.98,.5]].forEach(([f,d]) => {
+        this._tone(f,'sine', t+d, 0.22, 0.35, 0.001, ctx);
+      });
+    } else if (type === 'click') {
+      this._tone(800, 'sine', t, 0.06, 0.08, 0.001, ctx);
+    } else if (type === 'start') {
+      // Welcome jingle: G4 A4 B4 D5
+      [[392,0],[440,.1],[493.88,.2],[587.33,.32]].forEach(([f,d]) => {
+        this._tone(f,'triangle', t+d, 0.16, 0.25, 0.001, ctx);
+      });
+    } else if (type === 'nav') {
+      this._tone(600, 'sine', t, 0.1, 0.12, 0.001, ctx);
+    }
+  }
+};
+
+// Initialise mute state from localStorage
+try {
+  const savedMute = localStorage.getItem('mahika_science_sound');
+  if (savedMute === 'off') SFX.muted = true;
+} catch(e){}
+
+function toggleSound() {
+  SFX.muted = !SFX.muted;
+  const btn = document.getElementById('sound-chip');
+  if (btn) {
+    btn.textContent = SFX.muted ? '🔇' : '🔊';
+    btn.classList.toggle('muted', SFX.muted);
+  }
+  try { localStorage.setItem('mahika_science_sound', SFX.muted ? 'off' : 'on'); } catch(e){}
+  if (!SFX.muted) SFX.play('click');
+}
+
+// ═══════════════════════════════════════════════════════════════
+//  UI EFFECTS
+// ═══════════════════════════════════════════════════════════════
+function spawnParticles(el) {
+  if (!el) return;
+  const rect = el.getBoundingClientRect();
+  const cx = rect.left + rect.width / 2;
+  const cy = rect.top + rect.height / 2;
+  const emojis = ['⭐','✨','🌟','💫','🎉','🔥','💥','🌈'];
+  const count = 12;
+  for (let i = 0; i < count; i++) {
+    const p = document.createElement('div');
+    const angle = (i / count) * 360 + Math.random() * 20;
+    const dist = 55 + Math.random() * 65;
+    const tx = Math.cos(angle * Math.PI/180) * dist;
+    const ty = Math.sin(angle * Math.PI/180) * dist;
+    const size = 16 + Math.random() * 10;
+    p.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+    p.style.cssText = `position:fixed;left:${cx}px;top:${cy}px;font-size:${size}px;pointer-events:none;z-index:9999;--tx:${tx}px;--ty:${ty}px;animation:particleFly ${.55+Math.random()*.3}s ease forwards`;
+    document.body.appendChild(p);
+    setTimeout(() => p.remove(), 900);
+  }
+}
+
+function spawnConfetti(count = 80) {
+  const colors = ['#006874','#1B873A','#F0BD48','#AD1457','#6200EE','#D84315','#4FD8EB','#69DC89','#FFB98A'];
+  for (let i = 0; i < count; i++) {
+    const c = document.createElement('div');
+    c.className = 'confetti-piece';
+    const size = 7 + Math.random() * 9;
+    const isCircle = Math.random() > 0.5;
+    c.style.cssText = `
+      left:${5 + Math.random() * 90}vw;
+      top:-20px;
+      width:${size}px;
+      height:${isCircle ? size : size * 1.6}px;
+      border-radius:${isCircle ? '50%' : '2px'};
+      background:${colors[Math.floor(Math.random() * colors.length)]};
+      animation-duration:${1.2 + Math.random() * 1.8}s;
+      animation-delay:${Math.random() * .6}s;
+    `;
+    document.body.appendChild(c);
+    setTimeout(() => c.remove(), 3500);
+  }
+}
+
+function flashScreen(type) {
+  const overlay = document.getElementById('flash-overlay');
+  if (!overlay) return;
+  overlay.className = '';
+  // Force reflow so animation restarts
+  void overlay.offsetWidth;
+  overlay.classList.add(type === 'correct' ? 'flash-green' : 'flash-red');
+}
+
+function animateSparky(type) {
+  // Animate all visible Sparky avatars
+  document.querySelectorAll('.ollie-avatar').forEach(el => {
+    el.style.animation = 'none';
+    void el.offsetWidth;
+    if (type === 'correct') {
+      el.style.animation = 'sparkyBounce .6s ease';
+    } else {
+      el.style.animation = 'sparkyShake .5s ease';
+    }
+    setTimeout(() => { el.style.animation = 'ollieWave 2s ease-in-out infinite'; }, 700);
+  });
+}
+
+function animateStarCount() {
+  const el = document.getElementById('star-count');
+  if (!el) return;
+  el.style.animation = 'none';
+  void el.offsetWidth;
+  el.style.animation = 'starPop .4s ease';
+  setTimeout(() => { el.style.animation = ''; }, 450);
+}
+
+function showStreakCelebration() {
+  SFX.play('streak');
+  spawnConfetti(50);
+  const el = document.createElement('div');
+  el.style.cssText = `
+    position:fixed;top:50%;left:50%;z-index:9999;pointer-events:none;
+    font-size:clamp(36px,8vw,64px);font-family:'Pacifico',cursive;
+    background:linear-gradient(135deg,#FF6D00,#FFD600);
+    -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+    text-shadow:none;white-space:nowrap;
+    animation:streakBurst 1.4s ease forwards;
+  `;
+  el.textContent = `🔥 ${STATE.streak} in a row!`;
+  document.body.appendChild(el);
+  setTimeout(() => el.remove(), 1500);
+}
+
+function showToast(msg, isError=false) {
+  const t = document.createElement('div');
+  t.style.cssText = `position:fixed;bottom:24px;left:50%;transform:translateX(-50%);
+    background:${isError?'#93000A':'var(--md-primary)'};color:#fff;
+    padding:10px 22px;border-radius:999px;font-size:14px;font-weight:800;
+    z-index:9999;box-shadow:0 4px 16px rgba(0,0,0,.3);animation:fadeUp .3s ease`;
+  t.textContent = msg;
+  document.body.appendChild(t);
+  setTimeout(() => t.remove(), 3000);
+}
+</script>
+</body>
+</html>

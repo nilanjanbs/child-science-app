@@ -1,0 +1,20 @@
+{
+  "name": "mahika-science-app",
+  "version": "1.0.0",
+  "description": "Ontario Curriculum Science Learning App for Grade 2 & 3",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.92.0",
+    "dotenv": "^17.4.2",
+    "express": "^4.18.2"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "author": "Mahika Learning",
+  "license": "MIT"
+}
